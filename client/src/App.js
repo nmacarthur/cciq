@@ -1,6 +1,7 @@
-import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import { Page, Page1, Page2, Page3, Page4, Page5 } from "./ui/pages";
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Page, Page1, Page2, Page3, Page4, Page5 } from './ui/pages';
+
 class App extends Component {
   render() {
     return (
