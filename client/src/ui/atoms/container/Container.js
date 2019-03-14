@@ -1,6 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 const Container = styled.div`
   margin-right: auto;

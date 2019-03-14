@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Play_A</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Play_A" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle-Copy-2" stroke="#1D1D1B" stroke-width="4" fill="#1D1D1B" x="18" y="18" width="92" height="92"></rect>
+        <rect id="Rectangle" stroke="#1D1D1B" stroke-width="4" fill="#F0DD00" x="10" y="10" width="92" height="92"></rect>
+        <g id="Play" transform="translate(40.000000, 34.000000)"></g>
+        <polygon id="Play" fill="#1D1D1B" points="79 56 41 78 41 34"></polygon>
+    </g>
+</svg>

@@ -1,32 +1,26 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
-
 import Section from '../../atoms/section';
 import Container from '../../atoms/container';
 import Row from '../../atoms/row';
 import Column from '../../atoms/column';
 
-import heading from '../../../assets/heading.svg';
+import { Heading } from 'rebass';
 
-const HeaderImg = styled.img`
-  width: 100%;
-`;
-
-class Heading extends Component {
-  constructor({ backgroundColor }) {
+class Text2 extends Component {
+  constructor({ backgroundColor, location }) {
     super();
-    console.log(backgroundColor);
-    console.log(backgroundColor);
     this.backgroundColor = backgroundColor;
+    this.location = location;
   }
-
   render() {
     return (
-      <Section backgroundColor={this.backgroundColor} space={8}>
+      <Section backgroundColor={this.backgroundColor} space={4}>
         <Container>
           <Row alignItems="center" justifyContent="center">
-            <Column sm={12} md={6}>
-              <HeaderImg src={heading} alt="heading" />
+            <Column sm={12} md={8}>
+              <Heading textAlign="center" fontSize="3rem" lineHeight="3.875rem" mb={2}>
+                Local heroes supporting small business
+              </Heading>
             </Column>
           </Row>
         </Container>
@@ -35,4 +29,4 @@ class Heading extends Component {
   }
 }
 
-export default Heading;
+export default Text2;

@@ -6,6 +6,7 @@
     "prettier": "^1.16.4",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
+    "react-items-carousel": "^2.3.0",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.8",

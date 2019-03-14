@@ -5,7 +5,7 @@ class Page extends Component {
   render() {
     return (
       <div className="App">
-        <DefaultTemplate />
+        <DefaultTemplate location="Redcliffe" />
       </div>
     );
   }

@@ -1,12 +1,11 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+import DefaultTemplate from '../templates/defaultTemplate';
 
 class Page2 extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <p>Page2</p>
-        </header>
+        <DefaultTemplate location="Location 2" />
       </div>
     );
   }

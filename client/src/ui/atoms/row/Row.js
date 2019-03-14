@@ -1,6 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Row = styled.div`
   margin: 0 -0.5rem;

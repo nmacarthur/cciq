@@ -1,10 +1,10 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 const Column = styled.div`
   position: relative;
+  padding: 0 1rem;
   width: 100%;
-  padding: 0 0.5rem;
-  width: 100%;
+  align-items:stretch;
   flex-wrap: wrap;
   text-align: ${props => props.textAlign};
 
@@ -12,7 +12,7 @@ const Column = styled.div`
     props.xs &&
     css`
       @media (min-width: 0px) {
-        width: ${props => (props.xs ? (props.xs / 12) * 100 : "100")}%};
+        width: ${props => (props.xs ? (props.xs / 12) * 100 : '100')}%};
       }
     `}
 
@@ -20,7 +20,7 @@ const Column = styled.div`
     props.sm &&
     css`
       @media (min-width: 576px) {
-        width: ${props => (props.sm ? (props.sm / 12) * 100 : "100")}%};
+        width: ${props => (props.sm ? (props.sm / 12) * 100 : '100')}%};
       }
     `}
 
@@ -28,7 +28,7 @@ const Column = styled.div`
     props.md &&
     css`
       @media (min-width: 768px) {
-        width: ${props => (props.md ? (props.md / 12) * 100 : "100")}%};
+        width: ${props => (props.md ? (props.md / 12) * 100 : '100')}%};
       }
     `}
 
@@ -36,7 +36,7 @@ const Column = styled.div`
     props.lg &&
     css`
       @media (min-width: 992px) {
-        width: ${props => (props.lg ? (props.lg / 12) * 100 : "100")}%};
+        width: ${props => (props.lg ? (props.lg / 12) * 100 : '100')}%};
       }
     `}
 
@@ -44,7 +44,7 @@ const Column = styled.div`
     props.xl &&
     css`
       @media (min-width: 1200px) {
-        width: ${props => (props.xl ? (props.xl / 12) * 100 : "100")}%};
+        width: ${props => (props.xl ? (props.xl / 12) * 100 : '100')}%};
       }
     `}
   
