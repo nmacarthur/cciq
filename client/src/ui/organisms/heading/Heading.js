@@ -15,8 +15,6 @@ const HeaderImg = styled.img`
 class Heading extends Component {
   constructor({ backgroundColor }) {
     super();
-    console.log(backgroundColor);
-    console.log(backgroundColor);
     this.backgroundColor = backgroundColor;
   }
 

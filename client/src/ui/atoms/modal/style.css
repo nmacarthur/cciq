@@ -1,0 +1,26 @@
+.Modal {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+.ModalChild {
+  color: #1d1d1b;
+  padding: 1rem 1rem;
+  border: 3px solid #1d1d1b;
+  background: #fff;
+  border-radius: 2px;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  -webkit-box-shadow: 5px 5px 0 0 #1d1d1b;
+  box-shadow: 5px 5px 0 0 #1d1d1b;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(29, 29, 27, 0.7);
+}
