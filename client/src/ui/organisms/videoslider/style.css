@@ -1,0 +1,24 @@
+.slider-slide {
+  opacity: 0.5;
+}
+
+.slide-visible {
+  opacity: 1;
+}
+
+.slider-frame {
+  overflow: visible !important;
+  padding: 0rem 2rem;
+}
+
+.slider-control-centerleft {
+  left: -10.5rem !important;
+}
+
+.slider-control-centerright {
+  right: -10.5rem !important;
+}
+
+.carousel-section {
+  overflow: hidden;
+}

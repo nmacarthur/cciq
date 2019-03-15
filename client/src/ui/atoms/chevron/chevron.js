@@ -14,14 +14,17 @@ const Box = styled.div`
 `;
 
 class Chevron extends Component {
-  constructor({ direction }) {
+  constructor({ direction, className, style, onClick }) {
     super();
     this.direction = direction;
+    this.className = className;
+    this.style = style;
+    this.onClick = onClick;
   }
 
   render() {
     return (
-      <Box direction={this.direction}>
+      <Box direction={this.direction} className={this.className} onClick={this.onClick}>
         <img src={chevron} alt={this.direction} />
       </Box>
     );

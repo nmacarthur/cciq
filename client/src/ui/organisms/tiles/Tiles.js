@@ -8,6 +8,11 @@ import Container from '../../atoms/container';
 import Row from '../../atoms/row';
 import Column from '../../atoms/column';
 import Card from '../../atoms/card';
+import Modal from '../../atoms/modal';
+
+import LobbyMp from '../lobbymp';
+import SupporterPack from '../supporterpack';
+import PhotoFilter from '../photofilter';
 
 import icon1 from '../../../assets/icon1.svg';
 import icon2 from '../../../assets/icon2.svg';
@@ -24,32 +29,70 @@ class Tiles extends Component {
     super();
     this.backgroundColor = backgroundColor;
     this.location = location;
+    this.state = {
+      modal1: false,
+      modal2: false,
+      modal3: false
+    };
   }
+
   render() {
     return (
       <Section backgroundColor={this.backgroundColor} space={4}>
         <Container>
           <Row alignItems="stretch" justifyContent="center">
             <Column sm={12} md={4} my={1}>
-              <Card>
+              <Card
+                onClick={() => {
+                  if (!this.state.modal1) {
+                    this.setState({ modal1: true });
+                  }
+                }}
+              >
                 <Icon src={icon1} />
                 <Heading textAlign="center" width="80%" mb={1}>
                   Request a free supporter pack
                 </Heading>
                 <Text textAlign="center">Stickers, posters, flyers, oh my!</Text>
               </Card>
+              <Modal
+                modalChild={<SupporterPack />}
+                isVisible={this.state.modal1}
+                updateOpenState={() => {
+                  this.setState({ modal1: !this.state.modal1 });
+                }}
+              />
             </Column>
             <Column sm={12} md={4} my={1}>
-              <Card>
+              <Card
+                onClick={() => {
+                  if (!this.state.modal2) {
+                    this.setState({ modal2: true });
+                  }
+                }}
+              >
                 <Icon src={icon2} />
                 <Heading textAlign="center" width="80%" mb={1}>
                   Get social with our photo filter
                 </Heading>
                 <Text textAlign="center">Stickers, posters, flyers, oh my!</Text>
               </Card>
+              <Modal
+                modalChild={<PhotoFilter />}
+                isVisible={this.state.modal2}
+                updateOpenState={() => {
+                  this.setState({ modal2: !this.state.modal2 });
+                }}
+              />
             </Column>
             <Column sm={12} md={4} my={1}>
-              <Card>
+              <Card
+                onClick={() => {
+                  if (!this.state.modal3) {
+                    this.setState({ modal3: true });
+                  }
+                }}
+              >
                 <Icon src={icon3} />
                 <Heading textAlign="center" width="80%" mb={1}>
                   Lobby your MP
@@ -57,6 +100,13 @@ class Tiles extends Component {
                 <Text textAlign="center">
                   We’ve made it easy and drafted the email for you already!
                 </Text>
+                <Modal
+                  modalChild={<LobbyMp />}
+                  isVisible={this.state.modal3}
+                  updateOpenState={() => {
+                    this.setState({ modal3: !this.state.modal3 });
+                  }}
+                />
               </Card>
             </Column>
           </Row>
