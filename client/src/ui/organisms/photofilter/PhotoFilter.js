@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import firebase from 'firebase';
+import download from 'downloadjs';
+import nanoid from 'nanoid';
+import FileUploader from 'react-firebase-file-uploader';
 
 import Section from '../../atoms/section';
 import Container from '../../atoms/container';
@@ -11,31 +15,54 @@ import TextInput from '../../atoms/textinput';
 import Filter from '../../atoms/filter';
 
 import { Heading, Text } from 'rebass';
+import { NONAME } from 'dns';
 
 const SubmitButton = styled(Button)`
   background-color: #f0dd00;
   width: 100%;
 `;
 
+var config = {
+  apiKey: 'AIzaSyADQDo_zMbgj0o58tr9BsToHtSZqrzOzKI',
+  authDomain: 'cciq-smallbusiness.firebaseapp.com',
+  databaseURL: 'https://cciq-smallbusiness.firebaseio.com',
+  projectId: 'cciq-smallbusiness',
+  storageBucket: 'cciq-smallbusiness.appspot.com',
+  messagingSenderId: '704392240973'
+};
+firebase.initializeApp(config);
+var db = firebase.firestore();
 class PhotoFilter extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      email: 'jim@dundermifflin.com',
-      name: 'Jim Halpert',
+      email: 'Email Address',
+      name: 'First Name',
       phonenumber: '0411 111 111',
-      company: 'Dunder Mifflin',
-      suburb: 'Redcliffe',
-      postcode: '4021',
+      company: 'Company',
+      suburb: 'Suburb',
+      postcode: '0000',
       height: '',
-      width: ''
+      width: '',
+      file: ''
     };
+
+    this.updateState = this.updateState.bind(this);
+    this.doTheThing = this.doTheThing.bind(this);
+  }
+
+  updateState(file) {
+    this.setState({ file: file });
   }
 
   componentDidMount = () => {
-    let elHeight = document.getElementById('box').clientHeight;
-    let elWidth = document.getElementById('box').clientWidth;
+    let box = document.getElementById('box');
+    let computedStyle = getComputedStyle(box);
+    let elHeight = box.clientHeight;
+    let elWidth = box.clientWidth;
+    elHeight -= parseFloat(computedStyle.paddingTop) + parseFloat(computedStyle.paddingBottom);
+    elWidth -= parseFloat(computedStyle.paddingLeft) + parseFloat(computedStyle.paddingRight);
     console.log(elHeight, elWidth);
     this.setState({
       height: elHeight,
@@ -53,6 +80,25 @@ class PhotoFilter extends Component {
     }
   };
 
+  doTheThing() {
+    const name = `${nanoid()}.jpg`;
+    const file = this.state.file;
+    download(this.state.file, 'download.jpg', 'image/jpeg');
+
+    /*db.collection('images')
+      .add({
+        name: name,
+        data: file
+      })
+      .then(function(docRef) {
+        console.log('Document written with ID: ', docRef.id);
+        download(this.state.file, 'download.jpg', 'image/jpeg');
+      })
+      .catch(function(error) {
+        console.error('Error adding document: ', error);
+      }); */
+  }
+
   render() {
     return (
       <Section space={2}>
@@ -68,7 +114,11 @@ class PhotoFilter extends Component {
           <form>
             <Row>
               <Column sm={12} md={6} id="box">
-                <Filter width={this.state.width} height={this.state.height} />
+                <Filter
+                  width={this.state.width}
+                  height={this.state.height}
+                  updateParent={this.updateState}
+                />
               </Column>
               <Column sm={12} md={6} style={{ paddingBottom: '7rem' }}>
                 <Input
@@ -96,7 +146,13 @@ class PhotoFilter extends Component {
                   may use your image as part of the “Small business is a big deal” campaign.
                 </Text>
 
-                <SubmitButton type="submit">Send!</SubmitButton>
+                <SubmitButton
+                  onClick={() => {
+                    this.doTheThing();
+                  }}
+                >
+                  Download
+                </SubmitButton>
               </Column>
             </Row>
           </form>
