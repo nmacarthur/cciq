@@ -9,6 +9,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
 * {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;

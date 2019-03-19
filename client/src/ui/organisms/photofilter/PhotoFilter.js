@@ -15,7 +15,6 @@ import TextInput from '../../atoms/textinput';
 import Filter from '../../atoms/filter';
 
 import { Heading, Text } from 'rebass';
-import { NONAME } from 'dns';
 
 const SubmitButton = styled(Button)`
   background-color: #f0dd00;
@@ -35,7 +34,7 @@ var db = firebase.firestore();
 class PhotoFilter extends Component {
   constructor(props) {
     super(props);
-
+    console.log(props);
     this.state = {
       email: 'Email Address',
       name: 'First Name',
@@ -53,7 +52,9 @@ class PhotoFilter extends Component {
   }
 
   updateState(file) {
-    this.setState({ file: file });
+    this.setState({
+      file: file
+    });
   }
 
   componentDidMount = () => {
@@ -72,43 +73,56 @@ class PhotoFilter extends Component {
 
   updateData = ({ item, data }) => {
     if (item === 'name') {
-      this.setState({ name: data });
+      this.setState({
+        name: data
+      });
     } else if (item === 'company') {
-      this.setState({ company: data });
+      this.setState({
+        company: data
+      });
     } else if (item === 'suburb') {
-      this.setState({ suburb: data });
+      this.setState({
+        suburb: data
+      });
     }
   };
 
   doTheThing() {
     const name = `${nanoid()}.jpg`;
     const file = this.state.file;
-    download(this.state.file, 'download.jpg', 'image/jpeg');
-
-    /*db.collection('images')
+    const invoke = this.props.updateOpenState;
+    //download(this.state.file, 'download.jpg', 'image/jpeg');
+    db.collection('images')
       .add({
         name: name,
         data: file
       })
       .then(function(docRef) {
         console.log('Document written with ID: ', docRef.id);
-        download(this.state.file, 'download.jpg', 'image/jpeg');
+        invoke();
+        download(file, 'download.jpg', 'image/jpeg');
       })
       .catch(function(error) {
         console.error('Error adding document: ', error);
-      }); */
+      });
   }
 
   render() {
     return (
       <Section space={2}>
         <Container>
-          <Row alignItems="center" justifyContent="center" style={{ marginBottom: '1rem' }}>
+          <Row
+            alignItems="center"
+            justifyContent="center"
+            style={{
+              marginBottom: '1rem'
+            }}
+          >
             <Column sm={12}>
               <Heading fontSize="3rem" lineHeight="3.875rem" mb={2}>
                 Get social with our photo filter
               </Heading>
-              <Text fontSize="1.25rem">Show them you mean business!</Text>
+              <Text fontSize="1.25rem"> Show them you mean business! </Text>
             </Column>
           </Row>
           <form>
@@ -120,7 +134,13 @@ class PhotoFilter extends Component {
                   updateParent={this.updateState}
                 />
               </Column>
-              <Column sm={12} md={6} style={{ paddingBottom: '7rem' }}>
+              <Column
+                sm={12}
+                md={6}
+                style={{
+                  paddingBottom: '7rem'
+                }}
+              >
                 <Input
                   type="text"
                   placeholder={this.state.name}
@@ -142,10 +162,9 @@ class PhotoFilter extends Component {
                   updateParent={this.updateData}
                 />
                 <Text fontSize="1.25rem" py={2}>
-                  Acknowledgement: By using the photo filter you agree that CCIQ and it’s partners
-                  may use your image as part of the “Small business is a big deal” campaign.
+                  Acknowledgement: By using the photo filter you agree that CCIQ and it’ s partners
+                  may use your image as part of the“ Small business is a big deal” campaign.
                 </Text>
-
                 <SubmitButton
                   onClick={() => {
                     this.doTheThing();

@@ -45,7 +45,9 @@ class Tiles extends Component {
               <Card
                 onClick={() => {
                   if (!this.state.modal1) {
-                    this.setState({ modal1: true });
+                    this.setState({
+                      modal1: true
+                    });
                   }
                 }}
               >
@@ -53,13 +55,15 @@ class Tiles extends Component {
                 <Heading textAlign="center" width="80%" mb={1}>
                   Request a free supporter pack
                 </Heading>
-                <Text textAlign="center">Stickers, posters, flyers, oh my!</Text>
+                <Text textAlign="center"> Stickers, posters, flyers, oh my! </Text>
               </Card>
               <Modal
                 modalChild={<SupporterPack />}
                 isVisible={this.state.modal1}
                 updateOpenState={() => {
-                  this.setState({ modal1: !this.state.modal1 });
+                  this.setState({
+                    modal1: !this.state.modal1
+                  });
                 }}
               />
             </Column>
@@ -67,7 +71,9 @@ class Tiles extends Component {
               <Card
                 onClick={() => {
                   if (!this.state.modal2) {
-                    this.setState({ modal2: true });
+                    this.setState({
+                      modal2: true
+                    });
                   }
                 }}
               >
@@ -75,13 +81,23 @@ class Tiles extends Component {
                 <Heading textAlign="center" width="80%" mb={1}>
                   Get social with our photo filter
                 </Heading>
-                <Text textAlign="center">Stickers, posters, flyers, oh my!</Text>
+                <Text textAlign="center"> Stickers, posters, flyers, oh my! </Text>
               </Card>
               <Modal
-                modalChild={<PhotoFilter />}
+                modalChild={
+                  <PhotoFilter
+                    updateOpenState={() => {
+                      this.setState({
+                        modal2: !this.state.modal2
+                      });
+                    }}
+                  />
+                }
                 isVisible={this.state.modal2}
                 updateOpenState={() => {
-                  this.setState({ modal2: !this.state.modal2 });
+                  this.setState({
+                    modal2: !this.state.modal2
+                  });
                 }}
               />
             </Column>
@@ -89,7 +105,9 @@ class Tiles extends Component {
               <Card
                 onClick={() => {
                   if (!this.state.modal3) {
-                    this.setState({ modal3: true });
+                    this.setState({
+                      modal3: true
+                    });
                   }
                 }}
               >
@@ -98,13 +116,15 @@ class Tiles extends Component {
                   Lobby your MP
                 </Heading>
                 <Text textAlign="center">
-                  We’ve made it easy and drafted the email for you already!
+                  We’ ve made it easy and drafted the email for you already!
                 </Text>
                 <Modal
                   modalChild={<LobbyMp />}
                   isVisible={this.state.modal3}
                   updateOpenState={() => {
-                    this.setState({ modal3: !this.state.modal3 });
+                    this.setState({
+                      modal3: !this.state.modal3
+                    });
                   }}
                 />
               </Card>
