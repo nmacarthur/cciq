@@ -41,6 +41,7 @@ class Modal extends Component {
     this.state = {
       showModal: this.props.isVisible
     };
+
     this.children = this.props.children;
     this.modalChild = this.props.modalChild;
 
@@ -74,12 +75,16 @@ class Modal extends Component {
           ariaHideApp={false}
           className="Modal"
           overlayClassName="Overlay"
+          style={{ overflow: 'scroll' }}
         >
           <Section>
             <Container>
               <Row alignItems="center" justifyContent="center">
                 <Column sm={12}>
-                  <div className="ModalChild">{this.modalChild}</div>
+                  <div className="ModalChild">
+                    {this.modalChild}
+                    {this.children}
+                  </div>
                   <CloseButton
                     onClick={() => {
                       this.handleCloseModal();

@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 import { Button } from 'rebass';
 
-const ChunkyButton = styled(Button)`
+const ChunkyButton = styled.div`
+  text-align: center;
   color: #1d1d1b;
   padding: 1rem 2rem;
   position: relative;
