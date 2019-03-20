@@ -21,13 +21,17 @@ class SupporterPack extends Component {
     super(props);
 
     this.state = {
-      email: 'jim@dundermifflin.com',
-      name: 'Jim Halpert',
-      phonenumber: '0411 111 111',
-      company: 'Dunder Mifflin',
-      suburb: 'Redcliffe',
-      postcode: '4021'
+      email: null,
+      name: null,
+      phone: null,
+      company: null,
+      suburb: null,
+      address: null,
+      postcode: null,
+      buttonMessage: 'Send'
     };
+    this.mail = this.mail.bind(this);
+    this.isfilled = this.isfilled.bind(this);
   }
 
   updateData = ({ item, data }) => {
@@ -37,6 +41,59 @@ class SupporterPack extends Component {
       this.setState({ company: data });
     } else if (item === 'suburb') {
       this.setState({ suburb: data });
+    } else if (item === 'email') {
+      this.setState({ email: data });
+    } else if (item === 'phone') {
+      this.setState({ phone: data });
+    } else if (item === 'postcode') {
+      this.setState({ postcode: data });
+    } else if (item === 'address') {
+      this.setState({ address: data });
+    }
+  };
+
+  isfilled = () => {
+    return (
+      this.state.email &&
+      this.state.name &&
+      this.state.phone &&
+      this.state.company &&
+      this.state.suburb &&
+      this.state.address &&
+      this.state.postcode
+    );
+  };
+
+  mail = async () => {
+    if (this.isfilled()) {
+      this.setState({ buttonMessage: 'Thankyou!' });
+
+      var data = JSON.stringify(false);
+
+      var xhr = new XMLHttpRequest();
+      xhr.withCredentials = true;
+
+      xhr.addEventListener('readystatechange', function() {
+        if (this.readyState === 4) {
+          console.log(this.responseText);
+        }
+      });
+
+      xhr.open(
+        'POST',
+        `/supporter?name=${this.state.name}&email=${this.state.email}&company=${
+          this.state.company
+        }&suburb=${this.state.suburb}&address=${this.state.address}&postcode=${
+          this.state.postcode
+        }&phone=${this.state.phone}`
+      );
+      xhr.setRequestHeader('Content-Type', 'application/json');
+
+      xhr.send(data);
+      const invoke = this.props.updateOpenState;
+      invoke();
+    } else {
+      this.setState({ buttonMessage: 'Please fill out all fields' });
     }
   };
 
@@ -69,6 +126,7 @@ class SupporterPack extends Component {
                   placeholder={this.state.email}
                   label="Your Email"
                   updateParent={this.updateData}
+                  item="email"
                 />
               </Column>
             </Row>
@@ -76,9 +134,10 @@ class SupporterPack extends Component {
               <Column sm={12} md={6}>
                 <Input
                   type="text"
-                  placeholder={this.state.phonenumber}
+                  placeholder={this.state.phone}
                   label="Your Phone Number"
                   updateParent={this.updateData}
+                  item="phone"
                 />
               </Column>
               <Column sm={12} md={6}>
@@ -87,6 +146,17 @@ class SupporterPack extends Component {
                   placeholder={this.state.company}
                   label="Your Business Name"
                   item="company"
+                  updateParent={this.updateData}
+                />
+              </Column>
+            </Row>
+            <Row>
+              <Column sm={12}>
+                <Input
+                  type="text"
+                  placeholder={this.state.address}
+                  label="Street Address"
+                  item="address"
                   updateParent={this.updateData}
                 />
               </Column>
@@ -111,17 +181,7 @@ class SupporterPack extends Component {
                 />
               </Column>
             </Row>
-            <Row>
-              <Column sm={12}>
-                <Input
-                  type="text"
-                  placeholder={this.state.suburb}
-                  label="Street Address"
-                  item="suburb"
-                  updateParent={this.updateData}
-                />
-              </Column>
-            </Row>
+
             <Row>
               <Column sm={12} md={6}>
                 <Text>
@@ -130,7 +190,7 @@ class SupporterPack extends Component {
                 </Text>
               </Column>
               <Column sm={12} md={6}>
-                <SubmitButton type="submit">Send!</SubmitButton>
+                <SubmitButton onClick={this.mail}>{this.state.buttonMessage}</SubmitButton>
               </Column>
             </Row>
           </form>

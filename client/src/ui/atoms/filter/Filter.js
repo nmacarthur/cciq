@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 import Dropzone from 'react-dropzone';
 
+import sightengine from 'sightengine';
+
 import Crop from '../crop';
 import Modal from '../modal/Modal';
 
@@ -93,9 +95,9 @@ class Filter extends Component {
             reader.onload = () => {
               // Do whatever you want with the file contents
               const base64 = reader.result;
+
               this.setState({ src: base64, hideCanvas: true, hideCrop: false, hideDropZone: true });
             };
-
             acceptedFiles.forEach(file => reader.readAsDataURL(file));
           }}
           accept="image/*"

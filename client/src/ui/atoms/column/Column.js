@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 const Column = styled.div`
   position: relative;
-  padding: 0 1rem;
+  padding: ${props => (props.padfix ? '1rem' : '0rem 1rem')};
   width: 100%;
   align-items:stretch;
   flex-wrap: wrap;

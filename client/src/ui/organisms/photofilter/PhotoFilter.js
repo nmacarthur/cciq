@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import firebase from 'firebase';
 import download from 'downloadjs';
 import nanoid from 'nanoid';
-import FileUploader from 'react-firebase-file-uploader';
+
+import { Heading, Text } from 'rebass';
 
 import Section from '../../atoms/section';
 import Container from '../../atoms/container';
@@ -11,17 +12,14 @@ import Row from '../../atoms/row';
 import Column from '../../atoms/column';
 import Input from '../../atoms/input';
 import Button from '../../atoms/button';
-import TextInput from '../../atoms/textinput';
 import Filter from '../../atoms/filter';
-
-import { Heading, Text } from 'rebass';
 
 const SubmitButton = styled(Button)`
   background-color: #f0dd00;
   width: 100%;
 `;
 
-var config = {
+const config = {
   apiKey: 'AIzaSyADQDo_zMbgj0o58tr9BsToHtSZqrzOzKI',
   authDomain: 'cciq-smallbusiness.firebaseapp.com',
   databaseURL: 'https://cciq-smallbusiness.firebaseio.com',
@@ -29,22 +27,21 @@ var config = {
   storageBucket: 'cciq-smallbusiness.appspot.com',
   messagingSenderId: '704392240973'
 };
+
 firebase.initializeApp(config);
-var db = firebase.firestore();
+const db = firebase.firestore();
+
 class PhotoFilter extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
     this.state = {
-      email: 'Email Address',
-      name: 'First Name',
-      phonenumber: '0411 111 111',
-      company: 'Company',
-      suburb: 'Suburb',
-      postcode: '0000',
+      email: '',
+      name: '',
+      company: '',
       height: '',
       width: '',
-      file: ''
+      file: '',
+      buttonText: 'Download'
     };
 
     this.updateState = this.updateState.bind(this);
@@ -53,18 +50,18 @@ class PhotoFilter extends Component {
 
   updateState(file) {
     this.setState({
-      file: file
+      file
     });
   }
 
   componentDidMount = () => {
-    let box = document.getElementById('box');
-    let computedStyle = getComputedStyle(box);
+    const box = document.getElementById('box');
+    const computedStyle = getComputedStyle(box);
     let elHeight = box.clientHeight;
     let elWidth = box.clientWidth;
+
     elHeight -= parseFloat(computedStyle.paddingTop) + parseFloat(computedStyle.paddingBottom);
     elWidth -= parseFloat(computedStyle.paddingLeft) + parseFloat(computedStyle.paddingRight);
-    console.log(elHeight, elWidth);
     this.setState({
       height: elHeight,
       width: elWidth
@@ -88,24 +85,32 @@ class PhotoFilter extends Component {
   };
 
   doTheThing() {
-    const name = `${nanoid()}.jpg`;
-    const file = this.state.file;
-    const invoke = this.props.updateOpenState;
-    //download(this.state.file, 'download.jpg', 'image/jpeg');
-    db.collection('images')
-      .add({
-        name: name,
-        data: file
-      })
-      .then(function(docRef) {
-        console.log('Document written with ID: ', docRef.id);
-        invoke();
-        download(file, 'download.jpg', 'image/jpeg');
-      })
-      .catch(function(error) {
-        console.error('Error adding document: ', error);
-      });
+    if (this.isfilled()) {
+      const name = `${nanoid()}.jpg`;
+      const { file } = this.state;
+      const invoke = this.props.updateOpenState;
+
+      // download(this.state.file, 'download.jpg', 'image/jpeg');
+      db.collection('images')
+        .add({
+          name,
+          data: file
+        })
+        .then(() => {
+          invoke();
+          download(file, 'download.jpg', 'image/jpeg');
+        })
+        .catch(error => {
+          console.error('Error adding document: ', error);
+        });
+    } else {
+      this.setState({ buttonText: 'Please fill out all fields' });
+    }
   }
+
+  isfilled = () => {
+    return this.state.email && this.state.name && this.state.company && this.state.file;
+  };
 
   render() {
     return (
@@ -170,7 +175,7 @@ class PhotoFilter extends Component {
                     this.doTheThing();
                   }}
                 >
-                  Download
+                  {this.state.buttonText}
                 </SubmitButton>
               </Column>
             </Row>

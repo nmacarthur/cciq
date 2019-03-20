@@ -32,9 +32,7 @@ const InputContainer = styled.div`
 const message = ({ mp, name, company, suburb }) =>
   `${mp} MP
 
-Lorem Ipsum Dolor Sit Amet Consectetu
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+Message Text Goes here
 
 Sincerly ${name},
 ${company}
@@ -49,6 +47,7 @@ class TextInput extends Component {
       name: this.props.name,
       company: this.props.company,
       suburb: this.props.suburb,
+
       value: message({
         mp: this.props.mp,
         name: this.props.name,
@@ -75,6 +74,8 @@ class TextInput extends Component {
       })
     });
   }
+
+  returnMessage = () => this.state.value;
 
   handleChange(event) {
     this.setState({ value: event.target.value });
