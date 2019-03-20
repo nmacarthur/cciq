@@ -41,7 +41,7 @@ class Tiles extends Component {
       <Section backgroundColor={this.backgroundColor} space={4}>
         <Container>
           <Row alignItems="stretch" justifyContent="center">
-            <Column sm={12} md={4} my={1}>
+            <Column padfix sm={12} md={4} my={1}>
               <Card
                 onClick={() => {
                   if (!this.state.modal1) {
@@ -58,7 +58,15 @@ class Tiles extends Component {
                 <Text textAlign="center"> Stickers, posters, flyers, oh my! </Text>
               </Card>
               <Modal
-                modalChild={<SupporterPack />}
+                modalChild={
+                  <SupporterPack
+                    updateOpenState={() => {
+                      this.setState({
+                        modal1: !this.state.modal1
+                      });
+                    }}
+                  />
+                }
                 isVisible={this.state.modal1}
                 updateOpenState={() => {
                   this.setState({
@@ -67,7 +75,7 @@ class Tiles extends Component {
                 }}
               />
             </Column>
-            <Column sm={12} md={4} my={1}>
+            <Column padfix sm={12} md={4} my={1}>
               <Card
                 onClick={() => {
                   if (!this.state.modal2) {
@@ -101,7 +109,7 @@ class Tiles extends Component {
                 }}
               />
             </Column>
-            <Column sm={12} md={4} my={1}>
+            <Column padfix sm={12} md={4} my={1}>
               <Card
                 onClick={() => {
                   if (!this.state.modal3) {
@@ -119,7 +127,15 @@ class Tiles extends Component {
                   We’ ve made it easy and drafted the email for you already!
                 </Text>
                 <Modal
-                  modalChild={<LobbyMp />}
+                  modalChild={
+                    <LobbyMp
+                      updateOpenState={() => {
+                        this.setState({
+                          modal3: !this.state.modal3
+                        });
+                      }}
+                    />
+                  }
                   isVisible={this.state.modal3}
                   updateOpenState={() => {
                     this.setState({

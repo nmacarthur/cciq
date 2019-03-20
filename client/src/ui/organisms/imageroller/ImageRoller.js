@@ -4,15 +4,11 @@ import firebase from 'firebase';
 
 import styled, { keyframes } from 'styled-components';
 import Section from '../../atoms/section';
-import Container from '../../atoms/container';
-import Row from '../../atoms/row';
-import Column from '../../atoms/column';
 
-import Carousel from 'nuka-carousel';
+const db = firebase.firestore();
 
-import eg from '../../../assets/eg.jpg';
-
-var db = firebase.firestore();
+const size = 24;
+const mobile = 18;
 
 const play = keyframes`
   from {
@@ -42,15 +38,18 @@ const Slider = styled.div`
   margin-left: auto;
   overflow: hidden;
   width: 100%;
-  height: 26rem;
+  min-height: ${size}rem;
+  @media screen and (max-width: 425px) {
+    min-height: ${mobile}rem;
+  }
 `;
 
 const SliderList1 = styled.ul`
   position: absolute;
   left: 0;
-  width: 200%;
-  @media screen and (max-width: 768px) {
-    width: 1000%;
+  width: calc(${size}rem * 10);
+  @media screen and (max-width: 425px) {
+    width: calc(${mobile}rem * 10);
   }
   height: 100%;
   padding: 0;
@@ -77,44 +76,35 @@ const SliderList4 = styled(SliderList1)`
 const Slide = styled.li`
   margin-left: auto;
   margin-right: auto;
-  width: 20rem;
-  height: 20rem;
+  padding: 1rem;
   list-style-type: none;
-  @media screen and (max-width: 768px) {
-    width: 80%;
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
 `;
 
 const SlideImg = styled.img`
   width: 100%;
 `;
 const images = [];
+
 class ImageRoller extends Component {
   constructor({ backgroundColor, location }) {
     super();
     this.backgroundColor = backgroundColor;
     this.location = location;
-    console.log('yep');
     this.state = {
       images: []
     };
     db.collection('images')
       .get()
-      .then(function(querySnapshot) {
-        querySnapshot.forEach(function(doc) {
+      .then(querySnapshot => {
+        querySnapshot.forEach(doc => {
           // doc.data() is never undefined for query doc snapshots
           images.push(doc.data().data);
         });
       })
       .then(() => {
         this.setState({
-          images: images
+          images
         });
-      })
-      .catch(function(error) {
-        console.log('Error getting documents: ', error);
       });
   }
 
@@ -136,7 +126,6 @@ class ImageRoller extends Component {
           <SliderList2>
             {this.state.images.map((data, index) => {
               if (index < 10) {
-                console.log(index);
                 return (
                   <Slide key={index}>
                     <SlideImg src={data} />
@@ -149,7 +138,7 @@ class ImageRoller extends Component {
         <Slider>
           <SliderList3>
             {this.state.images.map((data, index) => {
-              if (10 < index && index <= 20) {
+              if (index > 10 && index <= 20) {
                 return (
                   <Slide key={index}>
                     <SlideImg src={data} />
@@ -160,7 +149,7 @@ class ImageRoller extends Component {
           </SliderList3>
           <SliderList4>
             {this.state.images.map((data, index) => {
-              if (10 < index && index <= 20) {
+              if (index > 10 && index <= 20) {
                 return (
                   <Slide key={index}>
                     <SlideImg src={data} />
