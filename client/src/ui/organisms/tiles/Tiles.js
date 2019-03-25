@@ -25,7 +25,7 @@ const Icon = styled.img`
 `;
 
 class Tiles extends Component {
-  constructor({ backgroundColor, location }) {
+  constructor({ backgroundColor, location, content, queensland }) {
     super();
     this.backgroundColor = backgroundColor;
     this.location = location;
@@ -34,6 +34,12 @@ class Tiles extends Component {
       modal2: false,
       modal3: false
     };
+    this.content = content;
+    this.queensland = queensland;
+    console.log(content);
+    this.cardMessage = this.queensland
+      ? 'Lobby the PM and Opposition Leader'
+      : 'Lobby your local MP';
   }
 
   render() {
@@ -89,7 +95,7 @@ class Tiles extends Component {
                 <Heading textAlign="center" width="80%" mb={1}>
                   Get social with our photo filter
                 </Heading>
-                <Text textAlign="center"> Stickers, posters, flyers, oh my! </Text>
+                <Text textAlign="center"> Show them you mean business! </Text>
               </Card>
               <Modal
                 modalChild={
@@ -121,7 +127,7 @@ class Tiles extends Component {
               >
                 <Icon src={icon3} />
                 <Heading textAlign="center" width="80%" mb={1}>
-                  Lobby your MP
+                  {this.cardMessage}
                 </Heading>
                 <Text textAlign="center">
                   We’ ve made it easy and drafted the email for you already!
@@ -134,6 +140,9 @@ class Tiles extends Component {
                           modal3: !this.state.modal3
                         });
                       }}
+                      mp={this.content.mp}
+                      to={this.content.email}
+                      queensland={this.queensland}
                     />
                   }
                   isVisible={this.state.modal3}

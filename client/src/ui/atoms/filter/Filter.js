@@ -3,10 +3,7 @@ import styled from 'styled-components';
 
 import Dropzone from 'react-dropzone';
 
-import sightengine from 'sightengine';
-
 import Crop from '../crop';
-import Modal from '../modal/Modal';
 
 import frame from '../../../assets/frame.jpg';
 import banner from '../../../assets/banner.jpg';
@@ -121,11 +118,12 @@ class Filter extends Component {
         <img
           ref="frame"
           src={frame}
+          alt="_"
           style={{ width: this.props.width, height: this.props.height }}
           className="hidden"
         />
-        <img ref="img" src={croppedImg} className="hidden" />
-        <img ref="banner" src={banner} className="hidden" />
+        <img ref="img" alt="_" src={croppedImg} className="hidden" />
+        <img ref="banner" alt="_" src={banner} className="hidden" />
 
         {src && !hideCrop && <Crop src={src} getCroppedImg={this.getCroppedImg} />}
       </div>

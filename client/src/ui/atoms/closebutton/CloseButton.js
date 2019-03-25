@@ -4,13 +4,13 @@ import styled from 'styled-components';
 import xsvg from '../../../assets/cross.svg';
 
 const StyledButton = styled.div`
-  background-color: #f0dd00;
+  background-color: #e6f500;
   padding: 0.5rem;
   position: absolute;
   right: 2.15625rem;
   top: 1rem;
   color: #1d1d1b;
-  border: 3px solid #1d1d1b;
+  border: 4px solid #1d1d1b;
   cursor: pointer;
   border-radius: 2px;
   font-weight: 600;

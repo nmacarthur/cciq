@@ -20,10 +20,11 @@ const InlineButton = styled(Button)`
 `;
 
 class CTA extends Component {
-  constructor({ backgroundColor, location }) {
+  constructor({ backgroundColor, location, content }) {
     super();
     this.backgroundColor = backgroundColor;
     this.location = location;
+    this.content = content;
   }
   render() {
     return (
@@ -32,7 +33,15 @@ class CTA extends Component {
           <Row alignItems="center" justifyContent="center">
             <Column sm={12} md={8}>
               <Heading textAlign="center" fontSize="3rem" lineHeight="3.875rem" mb={2}>
-                Join us on <InlineButton fontSize="2rem">facebook</InlineButton>
+                Join us on{' '}
+                <InlineButton
+                  fontSize="2rem"
+                  onClick={() => {
+                    window.open(this.content.fb);
+                  }}
+                >
+                  facebook
+                </InlineButton>
               </Heading>
             </Column>
           </Row>

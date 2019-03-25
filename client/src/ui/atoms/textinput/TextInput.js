@@ -29,15 +29,16 @@ const InputContainer = styled.div`
   height: 100%;
 `;
 
-const message = ({ mp, name, company, suburb }) =>
-  `${mp} MP
-
-Message Text Goes here
-
-Sincerly ${name},
-${company}
-${suburb}`;
-
+const message = ({ mp, name, email, company, suburb }) => {
+  mp += ',';
+  if (name) {
+    name += ',';
+  }
+  if (company) {
+    company += ',';
+  }
+  return mp + '\n\nMessage Text Goes here. \n\nSincerely ' + name + '\n' + company + '\n' + suburb;
+};
 class TextInput extends Component {
   constructor(props) {
     super(props);
@@ -51,6 +52,7 @@ class TextInput extends Component {
       value: message({
         mp: this.props.mp,
         name: this.props.name,
+        email: this.props.email,
         company: this.props.company,
         suburb: this.props.suburb
       })
@@ -64,11 +66,13 @@ class TextInput extends Component {
     this.setState({
       mp: nextProps.mp,
       name: nextProps.name,
+      email: nextProps.email,
       company: nextProps.company,
       suburb: nextProps.suburb,
       value: message({
         mp: nextProps.mp,
         name: nextProps.name,
+        email: nextProps.email,
         company: nextProps.company,
         suburb: nextProps.suburb
       })
@@ -90,6 +94,7 @@ class TextInput extends Component {
             type={this.props.type}
             value={this.state.value}
             onChange={this.handleChange}
+            readOnly
           />
         </InputContainer>
       </div>

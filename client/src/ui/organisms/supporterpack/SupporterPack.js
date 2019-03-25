@@ -7,12 +7,11 @@ import Row from '../../atoms/row';
 import Column from '../../atoms/column';
 import Input from '../../atoms/input';
 import Button from '../../atoms/button';
-import TextInput from '../../atoms/textinput';
 
 import { Heading, Text } from 'rebass';
 
 const SubmitButton = styled(Button)`
-  background-color: #f0dd00;
+  background-color: #e6f500;
   width: 100%;
 `;
 
@@ -155,7 +154,7 @@ class SupporterPack extends Component {
                 <Input
                   type="text"
                   placeholder={this.state.address}
-                  label="Street Address"
+                  label="Postal Address"
                   item="address"
                   updateParent={this.updateData}
                 />
@@ -185,8 +184,8 @@ class SupporterPack extends Component {
             <Row>
               <Column sm={12} md={6}>
                 <Text>
-                  Acknowledgement: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                  eiusmod tempor incididunt.
+                  Acknowledgement: By hitting send you’re subscribing to our email list. Your
+                  information won’t be shared and you can unsubscribe any time.
                 </Text>
               </Column>
               <Column sm={12} md={6}>

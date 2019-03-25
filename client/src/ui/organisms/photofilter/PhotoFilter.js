@@ -15,7 +15,7 @@ import Button from '../../atoms/button';
 import Filter from '../../atoms/filter';
 
 const SubmitButton = styled(Button)`
-  background-color: #f0dd00;
+  background-color: #e6f500;
   width: 100%;
 `;
 
@@ -167,8 +167,8 @@ class PhotoFilter extends Component {
                   updateParent={this.updateData}
                 />
                 <Text fontSize="1.25rem" py={2}>
-                  Acknowledgement: By using the photo filter you agree that CCIQ and it’ s partners
-                  may use your image as part of the“ Small business is a big deal” campaign.
+                  Acknowledgement: By hitting download you agree to letting us use your image, but
+                  only for this campaign.
                 </Text>
                 <SubmitButton
                   onClick={() => {

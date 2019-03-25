@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { VimeoPlayer } from 'react-video-players';
-
-import nanoid from 'nanoid';
 
 import videoplaceholder from '../../../assets/video_placeholder.jpg';
 import play from '../../../assets/play.svg';
@@ -18,7 +15,7 @@ const Img = styled.img`
 const PlayButton = styled(Button)`
   width: 6.375rem;
   height: 6.375rem;
-  background-color: #f0dd00;
+  background-color: #e6f500;
   position: absolute;
   left: 50%;
   top: 50%;

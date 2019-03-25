@@ -54,23 +54,23 @@ const SliderList1 = styled.ul`
   height: 100%;
   padding: 0;
   display: flex;
-  -webkit-animation: ${play} linear 40s infinite;
-  animation: ${play} linear 40s infinite;
+  -webkit-animation: ${play} linear 60s infinite;
+  animation: ${play} linear 60s infinite;
 `;
 
 const SliderList2 = styled(SliderList1)`
-  -webkit-animation: ${play2} linear 40s infinite;
-  animation: ${play2} linear 40s infinite;
+  -webkit-animation: ${play2} linear 60s infinite;
+  animation: ${play2} linear 60s infinite;
 `;
 
 const SliderList3 = styled(SliderList1)`
-  -webkit-animation: ${play} linear reverse 40s infinite;
-  animation: ${play} linear reverse 40s infinite;
+  -webkit-animation: ${play} linear reverse 60s infinite;
+  animation: ${play} linear reverse 60s infinite;
 `;
 
 const SliderList4 = styled(SliderList1)`
-  -webkit-animation: ${play2} linear reverse 40s infinite;
-  animation: ${play2} linear reverse 40s infinite;
+  -webkit-animation: ${play2} linear reverse 60s infinite;
+  animation: ${play2} linear reverse 60s infinite;
 `;
 
 const Slide = styled.li`

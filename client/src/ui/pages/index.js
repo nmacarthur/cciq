@@ -1,8 +1,7 @@
-import Page from "./Page";
-import Page1 from "./Page1";
-import Page2 from "./Page2";
-import Page3 from "./Page3";
-import Page4 from "./Page4";
-import Page5 from "./Page5";
+import Queensland from './Queensland';
+import GoldCoast from './GoldCoast';
+import Mackay from './Mackay';
+import Redcliffe from './Redcliffe';
+import Toowoomba from './Toowoomba';
 
-export { Page, Page1, Page2, Page3, Page4, Page5 };
+export { Queensland, GoldCoast, Mackay, Redcliffe, Toowoomba };
