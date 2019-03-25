@@ -4,7 +4,7 @@ const Card = styled.div`
   color: #1d1d1b;
   padding: 2rem 2rem;
   position: relative;
-  border: 3px solid #1d1d1b;
+  border: 4px solid #1d1d1b;
   background: 0 0;
   cursor: pointer;
   border-radius: 2px;
@@ -22,7 +22,7 @@ const Card = styled.div`
     -webkit-box-shadow: 0px 0px 0 0 #1d1d1b;
     box-shadow: 0px 0px 0 0 #1d1d1b;
     background-color: #1d1d1b;
-    color: #f0dd00;
+    color: #e6f500;
   }
 `;
 

@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 
-import { Button } from 'rebass';
-
 const ChunkyButton = styled.div`
   text-align: center;
   color: #1d1d1b;
   padding: 1rem 2rem;
   position: relative;
-  border: 3px solid #1d1d1b;
+  border: 4px solid #1d1d1b;
   background: 0 0;
   cursor: pointer;
   border-radius: 2px;

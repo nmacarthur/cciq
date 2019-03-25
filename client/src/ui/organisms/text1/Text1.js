@@ -19,10 +19,11 @@ class Text1 extends Component {
           <Row alignItems="center" justifyContent="center">
             <Column sm={12} md={8}>
               <Heading textAlign="center" fontSize="3rem" lineHeight="3.875rem" mb={2}>
-                98% of Australian business is small business
+                97% of {this.location} business <br />
+                is small business
               </Heading>
               <Text textAlign="center" fontSize="1.5rem">
-                Show your support for the small businesses of {this.location}
+                Show your support for small business
               </Text>
             </Column>
           </Row>

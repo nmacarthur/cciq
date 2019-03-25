@@ -11,23 +11,45 @@ import Footer from '../../organisms/footer';
 import theme from '../../theme';
 
 class DefaultTemplate extends Component {
-  constructor({ location }) {
+  constructor({ location, content, queensland }) {
     super();
     this.location = location;
+    this.content = content;
+    this.queensland = queensland;
   }
   render() {
-    return (
-      <div>
-        <Heading backgroundColor={theme.primary} />
-        <VideoSlider backgroundColor={theme.primary} />
-        <Text1 backgroundColor={theme.primary} location={this.location} />
-        <Tiles backgroundColor={theme.primary} location={this.location} />
-        <Text2 backgroundColor={theme.primary} location={this.location} />
-        <ImageRoller backgroundColor={theme.primary} location={this.location} />
-        <CTA backgroundColor={theme.primary} location={this.location} />
-        <Footer backgroundColor={theme.dark} location={this.location} />
-      </div>
-    );
+    if (this.queensland) {
+      return (
+        <div>
+          <Heading backgroundColor={theme.primary} />
+          <VideoSlider backgroundColor={theme.primary} />
+          <Text1 backgroundColor={theme.primary} location={this.location} />
+          <Tiles
+            backgroundColor={theme.primary}
+            location={this.location}
+            queensland={true}
+            content={this.content}
+          />
+          <Text2 backgroundColor={theme.primary} location={this.location} />
+          <ImageRoller backgroundColor={theme.primary} location={this.location} />
+          <CTA backgroundColor={theme.primary} location={this.location} content={this.content} />
+          <Footer backgroundColor={theme.dark} location={this.location} content={this.content} />
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <Heading backgroundColor={theme.primary} />
+          <VideoSlider backgroundColor={theme.primary} />
+          <Text1 backgroundColor={theme.primary} location={this.location} />
+          <Tiles backgroundColor={theme.primary} location={this.location} content={this.content} />
+          <Text2 backgroundColor={theme.primary} location={this.location} />
+          <ImageRoller backgroundColor={theme.primary} location={this.location} />
+          <CTA backgroundColor={theme.primary} location={this.location} content={this.content} />
+          <Footer backgroundColor={theme.dark} location={this.location} content={this.content} />
+        </div>
+      );
+    }
   }
 }
 

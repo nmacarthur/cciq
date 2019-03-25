@@ -5,7 +5,7 @@
     <desc>Created with Sketch.</desc>
     <g id="icon2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Image" transform="translate(37.000000, 51.000000)" stroke="#1D1D1B" stroke-width="8">
-            <rect id="Rectangle" fill="#F0DD00" x="0" y="0" width="126" height="99"></rect>
+            <rect id="Rectangle" fill="#e6f500" x="0" y="0" width="126" height="99"></rect>
             <polyline id="Path" points="19.173913 99 51.4956522 41.25 72.0391304 78.1 84.9130435 60.5 106.826087 99"></polyline>
             <ellipse id="Oval" cx="99.9782609" cy="31.625" rx="9.58695652" ry="9.625"></ellipse>
         </g>

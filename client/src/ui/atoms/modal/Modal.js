@@ -12,17 +12,17 @@ import './style.css';
 import xsvg from '../../../assets/cross.svg';
 
 const CloseButton = styled.div`
-  background-color: #f0dd00;
+  background-color: #e6f500;
   padding: 0.5rem;
   position: absolute;
   right: 2.15625rem;
   top: 1rem;
   color: #1d1d1b;
-  border: 3px solid #1d1d1b;
+  border: 4px solid #1d1d1b;
   cursor: pointer;
   border-radius: 2px;
   font-weight: 600;
-  display: inline-block;
+  display: flex;
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
   -webkit-box-shadow: 5px 5px 0 0 #1d1d1b;
@@ -90,7 +90,7 @@ class Modal extends Component {
                       this.handleCloseModal();
                     }}
                   >
-                    <img src={xsvg} />
+                    <img src={xsvg} alt="_" />
                   </CloseButton>
                 </Column>
               </Row>

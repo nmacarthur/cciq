@@ -9,9 +9,8 @@ import Column from '../../atoms/column';
 import { Text } from 'rebass';
 
 import footersvg from '../../../assets/footer.svg';
-import logo1 from '../../../assets/logo1.svg';
-import logo2 from '../../../assets/logo2.svg';
-import logo3 from '../../../assets/logo3.png';
+import logo2 from '../../../assets/cciqlogo.svg';
+import logo3 from '../../../assets/acclogo.png';
 
 const FooterImg = styled.img`
   width: 100%;
@@ -19,13 +18,13 @@ const FooterImg = styled.img`
 
 const FooterText = styled(Text)`
   text-align: center;
-  color: #f0dd00;
+  color: #e6f500;
   text-transform: uppercase;
 `;
 
 const Icon = styled.img`
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 200px;
+  max-height: 100px;
   margin: auto;
 `;
 
@@ -40,39 +39,67 @@ const FooterRow = styled(Row)`
 `;
 
 class Footer extends Component {
-  constructor({ backgroundColor, location }) {
+  constructor({ backgroundColor, location, content }) {
     super();
     this.backgroundColor = backgroundColor;
     this.location = location;
+    this.content = content;
   }
   render() {
-    return (
-      <Section backgroundColor={this.backgroundColor} space={8}>
-        <Container>
-          <FooterRow alignItems="center" justifyContent="center">
-            <Column sm={12} md={10} justifyContent="center" alignItems="center">
-              <FooterImg src={footersvg} />
-            </Column>
-          </FooterRow>
-          <Row alignItems="center" justifyContent="center">
-            <Column sm={12} md={10} justifyContent="center" alignItems="center">
-              <FooterText>Brought to you by</FooterText>
-            </Column>
-          </Row>
-          <Row alignItems="center" justifyContent="center">
-            <FooterColumn sm={12} md={4}>
-              <Icon src={logo1} />
-            </FooterColumn>
-            <FooterColumn sm={12} md={4}>
-              <Icon src={logo2} />
-            </FooterColumn>
-            <FooterColumn sm={12} md={4}>
-              <Icon src={logo3} />
-            </FooterColumn>
-          </Row>
-        </Container>
-      </Section>
-    );
+    if (this.content.logo) {
+      return (
+        <Section backgroundColor={this.backgroundColor} space={8}>
+          <Container>
+            <FooterRow alignItems="center" justifyContent="center">
+              <Column sm={12} md={10} justifyContent="center" alignItems="center">
+                <FooterImg src={footersvg} />
+              </Column>
+            </FooterRow>
+            <Row alignItems="center" justifyContent="center">
+              <Column sm={12} md={10} justifyContent="center" alignItems="center">
+                <FooterText>Brought to you by</FooterText>
+              </Column>
+            </Row>
+            <Row alignItems="center" justifyContent="center">
+              <FooterColumn sm={12} md={4}>
+                <Icon src={this.content.logo} />
+              </FooterColumn>
+              <FooterColumn sm={12} md={4}>
+                <Icon src={logo2} />
+              </FooterColumn>
+              <FooterColumn sm={12} md={4}>
+                <Icon src={logo3} />
+              </FooterColumn>
+            </Row>
+          </Container>
+        </Section>
+      );
+    } else {
+      return (
+        <Section backgroundColor={this.backgroundColor} space={8}>
+          <Container>
+            <FooterRow alignItems="center" justifyContent="center">
+              <Column sm={12} md={10} justifyContent="center" alignItems="center">
+                <FooterImg src={footersvg} />
+              </Column>
+            </FooterRow>
+            <Row alignItems="center" justifyContent="center">
+              <Column sm={12} md={10} justifyContent="center" alignItems="center">
+                <FooterText>Brought to you by</FooterText>
+              </Column>
+            </Row>
+            <Row alignItems="center" justifyContent="center">
+              <FooterColumn sm={12} md={6}>
+                <Icon src={logo2} />
+              </FooterColumn>
+              <FooterColumn sm={12} md={6}>
+                <Icon src={logo3} />
+              </FooterColumn>
+            </Row>
+          </Container>
+        </Section>
+      );
+    }
   }
 }
 
