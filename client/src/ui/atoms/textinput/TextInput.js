@@ -37,7 +37,27 @@ const message = ({ mp, name, email, company, suburb }) => {
   if (company) {
     company += ',';
   }
-  return mp + '\n\nMessage Text Goes here. \n\nSincerely ' + name + '\n' + company + '\n' + suburb;
+  return (
+    'Dear ' +
+    mp +
+    '\n\n' +
+    'Small businesses are struggling to survive. Putting extra pressure on them will just force them out of business and hurt the working people they support. I’m asking you to: ' +
+    '\n\n' +
+    '1. Keep Wages Fair. \n Australia already has the world’s highest minimum wage. Employers will have to cut staff or rosters if politicians force wages up too fast. Let the independent Fair Work Commission do its job.' +
+    '\n\n' +
+    '2. Make Power Cheaper. \n Some local businesses now pay more for electricity than rent. Australia needs political leadership and a national energy plan.' +
+    '\n\n' +
+    '3. Get Locals Into Work. \n It should not be hard to find skilled staff. Every young person and jobseeker should be training for a career. We need to get more of them into funded training courses. ' +
+    '\n\n' +
+    'Small business is not big business. Small employers do not make super profits, pay a fair share of tax, and treat staff like family.' +
+    '\n\n' +
+    'Sincerely ' +
+    name +
+    '\n' +
+    company +
+    '\n' +
+    suburb
+  );
 };
 class TextInput extends Component {
   constructor(props) {
