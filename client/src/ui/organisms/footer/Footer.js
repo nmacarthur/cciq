@@ -44,6 +44,8 @@ class Footer extends Component {
     this.backgroundColor = backgroundColor;
     this.location = location;
     this.content = content;
+    console.log(this.content);
+    this.auth = content.auth;
   }
   render() {
     if (this.content.logo) {
@@ -60,7 +62,7 @@ class Footer extends Component {
                 <FooterText>Brought to you by</FooterText>
               </Column>
             </Row>
-            <Row alignItems="center" justifyContent="center">
+            <Row alignItems="center" justifyContent="center" style={{ margin: '4rem 0rem' }}>
               <FooterColumn sm={12} md={4}>
                 <Icon src={this.content.logo} />
               </FooterColumn>
@@ -70,6 +72,11 @@ class Footer extends Component {
               <FooterColumn sm={12} md={4}>
                 <Icon src={logo3} />
               </FooterColumn>
+            </Row>
+            <Row alignItems="center" justifyContent="center">
+              <Column sm={12} md={10} justifyContent="center" alignItems="center">
+                <FooterText>{this.auth}</FooterText>
+              </Column>
             </Row>
           </Container>
         </Section>
@@ -88,13 +95,18 @@ class Footer extends Component {
                 <FooterText>Brought to you by</FooterText>
               </Column>
             </Row>
-            <Row alignItems="center" justifyContent="center">
+            <Row alignItems="center" justifyContent="center" style={{ margin: '4rem 0rem' }}>
               <FooterColumn sm={12} md={6}>
                 <Icon src={logo2} />
               </FooterColumn>
               <FooterColumn sm={12} md={6}>
                 <Icon src={logo3} />
               </FooterColumn>
+            </Row>
+            <Row alignItems="center" justifyContent="center">
+              <Column sm={12} md={10} justifyContent="center" alignItems="center">
+                <FooterText>{this.auth}</FooterText>
+              </Column>
             </Row>
           </Container>
         </Section>
