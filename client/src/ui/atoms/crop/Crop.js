@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import 'react-image-crop/dist/ReactCrop.css';
 
 const StyledButton = styled(Button)`
-  background-color: #e6f500;
+  background-color: #F0DD00;
   width: 100%;
 `;
 

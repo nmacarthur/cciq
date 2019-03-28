@@ -11,7 +11,7 @@ import Button from '../../atoms/button';
 import { Heading, Text } from 'rebass';
 
 const SubmitButton = styled(Button)`
-  background-color: #e6f500;
+  background-color: #F0DD00;
   width: 100%;
 `;
 

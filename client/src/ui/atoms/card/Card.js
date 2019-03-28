@@ -22,7 +22,7 @@ const Card = styled.div`
     -webkit-box-shadow: 0px 0px 0 0 #1d1d1b;
     box-shadow: 0px 0px 0 0 #1d1d1b;
     background-color: #1d1d1b;
-    color: #e6f500;
+    color: #F0DD00;
   }
 `;
 

@@ -15,7 +15,7 @@ const Img = styled.img`
 const PlayButton = styled(Button)`
   width: 6.375rem;
   height: 6.375rem;
-  background-color: #e6f500;
+  background-color: #F0DD00;
   position: absolute;
   left: 50%;
   top: 50%;

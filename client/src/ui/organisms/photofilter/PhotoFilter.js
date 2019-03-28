@@ -15,7 +15,7 @@ import Button from '../../atoms/button';
 import Filter from '../../atoms/filter';
 
 const SubmitButton = styled(Button)`
-  background-color: #e6f500;
+  background-color: #F0DD00;
   width: 100%;
 `;
 
