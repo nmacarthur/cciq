@@ -12,7 +12,7 @@ import './style.css';
 import xsvg from '../../../assets/cross.svg';
 
 const CloseButton = styled.div`
-  background-color: #e6f500;
+  background-color: #F0DD00;
   padding: 0.5rem;
   position: absolute;
   right: 2.15625rem;

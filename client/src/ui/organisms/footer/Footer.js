@@ -18,7 +18,7 @@ const FooterImg = styled.img`
 
 const FooterText = styled(Text)`
   text-align: center;
-  color: #e6f500;
+  color: #F0DD00;
   text-transform: uppercase;
 `;
 
