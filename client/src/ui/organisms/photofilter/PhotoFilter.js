@@ -15,7 +15,7 @@ import Button from '../../atoms/button';
 import Filter from '../../atoms/filter';
 
 const SubmitButton = styled(Button)`
-  background-color: #F0DD00;
+  background-color: #f0dd00;
   width: 100%;
 `;
 
@@ -77,9 +77,9 @@ class PhotoFilter extends Component {
       this.setState({
         company: data
       });
-    } else if (item === 'suburb') {
+    } else if (item === 'email') {
       this.setState({
-        suburb: data
+        email: data
       });
     }
   };
@@ -104,12 +104,12 @@ class PhotoFilter extends Component {
           console.error('Error adding document: ', error);
         });
     } else {
-      this.setState({ buttonText: 'Please fill out all fields' });
+      this.setState({ buttonText: 'Please fill out all required fields' });
     }
   }
 
   isfilled = () => {
-    return this.state.email && this.state.name && this.state.company && this.state.file;
+    return this.state.email && this.state.name && this.state.file;
   };
 
   render() {
@@ -149,7 +149,7 @@ class PhotoFilter extends Component {
                 <Input
                   type="text"
                   placeholder={this.state.name}
-                  label="Your Name"
+                  label="Your Name*"
                   item="name"
                   updateParent={this.updateData}
                 />
@@ -162,8 +162,9 @@ class PhotoFilter extends Component {
                 />
                 <Input
                   type="email"
+                  item="email"
                   placeholder={this.state.email}
-                  label="Your Email"
+                  label="Your Email*"
                   updateParent={this.updateData}
                 />
                 <Text fontSize="1.25rem" py={2}>

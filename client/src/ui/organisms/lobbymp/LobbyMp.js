@@ -12,7 +12,7 @@ import Button from '../../atoms/button';
 import TextInput from '../../atoms/textinput';
 
 const SubmitButton = styled(Button)`
-  background-color: #F0DD00;
+  background-color: #f0dd00;
   width: 100%;
 `;
 
@@ -104,7 +104,7 @@ class LobbyMp extends Component {
                 <Input
                   type="text"
                   placeholder={this.state.name}
-                  label="Your Name"
+                  label="Your Name*"
                   item="name"
                   updateParent={this.updateData}
                 />
@@ -118,14 +118,14 @@ class LobbyMp extends Component {
                 <Input
                   type="email"
                   placeholder={this.state.email}
-                  label="Your Email"
+                  label="Your Email*"
                   updateParent={this.updateData}
                   item="email"
                 />
                 <Input
                   type="text"
                   placeholder={this.state.suburb}
-                  label="Your Suburb"
+                  label="Your Suburb*"
                   item="suburb"
                   updateParent={this.updateData}
                 />

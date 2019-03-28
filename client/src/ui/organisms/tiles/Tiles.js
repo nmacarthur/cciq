@@ -61,7 +61,7 @@ class Tiles extends Component {
                 <Heading textAlign="center" width="80%" mb={1}>
                   Request a free supporter pack
                 </Heading>
-                <Text textAlign="center"> Stickers, posters, flyers, oh my! </Text>
+                <Text textAlign="center"> Get out stickers, flyers and logos </Text>
               </Card>
               <Modal
                 modalChild={

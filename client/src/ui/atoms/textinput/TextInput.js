@@ -51,7 +51,8 @@ const message = ({ mp, name, email, company, suburb }) => {
     '\n\n' +
     'Small business is not big business. Small employers do not make super profits, pay a fair share of tax, and treat staff like family.' +
     '\n\n' +
-    'Sincerely ' +
+    'Small Business is a Big Deal.' +
+    '\n\n' +
     name +
     '\n' +
     company +
