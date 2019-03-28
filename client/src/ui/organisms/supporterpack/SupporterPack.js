@@ -11,7 +11,7 @@ import Button from '../../atoms/button';
 import { Heading, Text } from 'rebass';
 
 const SubmitButton = styled(Button)`
-  background-color: #F0DD00;
+  background-color: #f0dd00;
   width: 100%;
 `;
 
@@ -92,7 +92,7 @@ class SupporterPack extends Component {
       const invoke = this.props.updateOpenState;
       invoke();
     } else {
-      this.setState({ buttonMessage: 'Please fill out all fields' });
+      this.setState({ buttonMessage: 'Please fill out all required fields' });
     }
   };
 
@@ -105,7 +105,7 @@ class SupporterPack extends Component {
               <Heading fontSize="3rem" lineHeight="3.875rem" mb={2}>
                 Request a free supporter pack
               </Heading>
-              <Text fontSize="1.25rem">Stickers, posters, flyers, oh my!</Text>
+              <Text fontSize="1.25rem">Get out stickers, flyers and logos</Text>
             </Column>
           </Row>
           <form>
@@ -114,7 +114,7 @@ class SupporterPack extends Component {
                 <Input
                   type="text"
                   placeholder={this.state.name}
-                  label="Your Name"
+                  label="Your Name*"
                   item="name"
                   updateParent={this.updateData}
                 />
@@ -123,7 +123,7 @@ class SupporterPack extends Component {
                 <Input
                   type="email"
                   placeholder={this.state.email}
-                  label="Your Email"
+                  label="Your Email*"
                   updateParent={this.updateData}
                   item="email"
                 />
@@ -134,16 +134,7 @@ class SupporterPack extends Component {
                 <Input
                   type="text"
                   placeholder={this.state.phone}
-                  label="Your Phone Number"
-                  updateParent={this.updateData}
-                  item="phone"
-                />
-              </Column>
-              <Column sm={12} md={6}>
-                <Input
-                  type="text"
-                  placeholder={this.state.company}
-                  label="Your Business Name"
+                  label="Your Phone Number*"
                   item="company"
                   updateParent={this.updateData}
                 />
@@ -154,18 +145,7 @@ class SupporterPack extends Component {
                 <Input
                   type="text"
                   placeholder={this.state.address}
-                  label="Postal Address"
-                  item="address"
-                  updateParent={this.updateData}
-                />
-              </Column>
-            </Row>
-            <Row>
-              <Column sm={12} md={8}>
-                <Input
-                  type="text"
-                  placeholder={this.state.suburb}
-                  label="Your Suburb"
+                  label="Postal Address*"
                   item="suburb"
                   updateParent={this.updateData}
                 />
@@ -174,7 +154,7 @@ class SupporterPack extends Component {
                 <Input
                   type="text"
                   placeholder={this.state.postcode}
-                  label="Postcode"
+                  label="Postcode*"
                   item="postcode"
                   updateParent={this.updateData}
                 />
