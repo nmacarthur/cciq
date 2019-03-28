@@ -20,7 +20,7 @@ const newEmailFromData = ({ name, email, mp, suburb, message, to }) => {
     Messages: [
       {
         From: {
-          Email: "lobby@supportsmall.org.au",
+          Email: "nicholas@newwordorder.com.au",
           Name: name
         },
         To: [
@@ -69,7 +69,7 @@ const newSupporterPack = ({
     Messages: [
       {
         From: {
-          Email: email,
+          Email: "nicholas@newwordorder.com.au",
           Name: name
         },
         To: [
