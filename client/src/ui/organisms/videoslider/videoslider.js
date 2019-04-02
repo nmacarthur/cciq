@@ -4,49 +4,28 @@ import Section from '../../atoms/section';
 import Container from '../../atoms/container';
 import Row from '../../atoms/row';
 import Column from '../../atoms/column';
-import Video from '../../atoms/video';
-import Chevron from '../../atoms/chevron';
 
-import Carousel from 'nuka-carousel';
 import './style.css';
+import { SavedCarousel } from './SavedCarousel';
+import { SwiperSlider } from './Swiper';
+
 class VideoSlider extends Component {
-  constructor({ backgroundColor, children }) {
+  constructor({ backgroundColor, children, content }) {
     super();
+    this.content = content;
+    this.videos = this.content.videos;
     this.backgroundColor = backgroundColor;
   }
-
+  /*              <SavedCarousel videos={this.videos} />
+   */
   render() {
+    this.videos = this.videos ? this.videos : [];
     return (
       <Section backgroundColor={this.backgroundColor} space={4} className="carousel-section">
         <Container>
           <Row alignItems="center" justifyContent="center">
             <Column sm={12} md={10}>
-              <Carousel
-                dragging={false}
-                wrapAround={true}
-                cellSpacing={32}
-                renderCenterLeftControls={({ previousSlide }) => (
-                  <Chevron onClick={previousSlide} direction="left" />
-                )}
-                renderCenterRightControls={({ nextSlide }) => <Chevron onClick={nextSlide} />}
-                renderBottomCenterControls={null}
-              >
-                <div>
-                  <Video />
-                </div>
-                <div>
-                  <Video />
-                </div>
-                <div>
-                  <Video />
-                </div>
-                <div>
-                  <Video />
-                </div>
-                <div>
-                  <Video />
-                </div>
-              </Carousel>
+              <SwiperSlider videos={this.videos} />
             </Column>
           </Row>
         </Container>

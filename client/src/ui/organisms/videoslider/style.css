@@ -22,3 +22,22 @@
 .carousel-section {
   overflow: hidden;
 }
+
+.swiper-container {
+  overflow: visible !important;
+}
+
+.swiper-slider {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.swiper-slide {
+  opacity: 0.5;
+  padding: 0rem 1rem;
+}
+
+.swiper-slide-active {
+  opacity: 1;
+
+}

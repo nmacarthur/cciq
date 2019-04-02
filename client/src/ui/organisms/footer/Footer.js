@@ -18,7 +18,7 @@ const FooterImg = styled.img`
 
 const FooterText = styled(Text)`
   text-align: center;
-  color: #F0DD00;
+  color: #f0dd00;
   text-transform: uppercase;
 `;
 
@@ -44,7 +44,6 @@ class Footer extends Component {
     this.backgroundColor = backgroundColor;
     this.location = location;
     this.content = content;
-    console.log(this.content);
     this.auth = content.auth;
   }
   render() {
