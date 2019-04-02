@@ -22,7 +22,7 @@ class DefaultTemplate extends Component {
       return (
         <div>
           <Heading backgroundColor={theme.primary} />
-          <VideoSlider backgroundColor={theme.primary} />
+          <VideoSlider backgroundColor={theme.primary} content={this.content} />
           <Text1 backgroundColor={theme.primary} location={this.location} />
           <Tiles
             backgroundColor={theme.primary}
@@ -40,7 +40,7 @@ class DefaultTemplate extends Component {
       return (
         <div>
           <Heading backgroundColor={theme.primary} />
-          <VideoSlider backgroundColor={theme.primary} />
+          <VideoSlider backgroundColor={theme.primary} content={this.content} />
           <Text1 backgroundColor={theme.primary} location={this.location} />
           <Tiles backgroundColor={theme.primary} location={this.location} content={this.content} />
           <Text2 backgroundColor={theme.primary} location={this.location} />

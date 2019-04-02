@@ -36,7 +36,6 @@ class Tiles extends Component {
     };
     this.content = content;
     this.queensland = queensland;
-    console.log(content);
     this.cardMessage = this.queensland
       ? 'Lobby the PM and Opposition Leader'
       : 'Lobby your local MP';
