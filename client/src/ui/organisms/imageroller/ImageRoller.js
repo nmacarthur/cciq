@@ -81,7 +81,8 @@ const Slide = styled.li`
 `;
 
 const SlideImg = styled.img`
-  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
 `;
 const images = [];
 
