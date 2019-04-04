@@ -49,7 +49,7 @@ const message = ({ mp, name, email, company, suburb }) => {
     '\n\n' +
     '3. Get Locals Into Work. \n It should not be hard to find skilled staff. Every young person and jobseeker should be training for a career. We need to get more of them into funded training courses. ' +
     '\n\n' +
-    'Small business is not big business. Small employers do not make super profits, pay a fair share of tax, and treat staff like family.' +
+    'Small business is not big business. Small employers do not make super profits, pay a fair share of tax, and treat staff like family.' +
     '\n\n' +
     'Small Business is a Big Deal.' +
     '\n\n' +

@@ -13,9 +13,9 @@ const sendEmail = mailjet.post("send", {
 });
 
 const newEmailFromData = ({ name, email, mp, suburb, message, to }) => {
-  const regex = new RegExp(",|\\.");
-  const newMessage = message.split(regex).map(string => `<p>${string}</p>`);
-  const finalMessage = newMessage.join("");
+  const regex = new RegExp("/[\r\n]+/");
+  const newMessage = message.split("\\n").map(string => `<p>${string}</p>`);
+  const finalMessage = message;
   const emailData = {
     Messages: [
       {
