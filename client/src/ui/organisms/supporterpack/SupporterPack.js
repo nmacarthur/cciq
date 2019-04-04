@@ -56,8 +56,6 @@ class SupporterPack extends Component {
       this.state.email &&
       this.state.name &&
       this.state.phone &&
-      this.state.company &&
-      this.state.suburb &&
       this.state.address &&
       this.state.postcode
     );
@@ -105,7 +103,7 @@ class SupporterPack extends Component {
               <Heading fontSize="3rem" lineHeight="3.875rem" mb={2}>
                 Request a free supporter pack
               </Heading>
-              <Text fontSize="1.25rem">Get out stickers, flyers and logos</Text>
+              <Text fontSize="1.25rem">Get our stickers, flyers and logos</Text>
             </Column>
           </Row>
           <form>
@@ -135,7 +133,7 @@ class SupporterPack extends Component {
                   type="text"
                   placeholder={this.state.phone}
                   label="Your Phone Number*"
-                  item="company"
+                  item="phone"
                   updateParent={this.updateData}
                 />
               </Column>
@@ -146,7 +144,7 @@ class SupporterPack extends Component {
                   type="text"
                   placeholder={this.state.address}
                   label="Postal Address*"
-                  item="suburb"
+                  item="address"
                   updateParent={this.updateData}
                 />
               </Column>
