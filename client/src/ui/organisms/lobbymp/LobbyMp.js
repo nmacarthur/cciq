@@ -57,6 +57,9 @@ class LobbyMp extends Component {
   mail = async () => {
     if (this.isfilled()) {
       const value = this.child.current.returnMessage();
+      const newvalue = value.split('\n').map(string => `<p>${string}</p>`);
+      const finalvalue = newvalue.join('');
+
       var data = JSON.stringify(false);
 
       var xhr = new XMLHttpRequest();
@@ -72,7 +75,7 @@ class LobbyMp extends Component {
         'POST',
         `/mail?name=${this.state.name}&email=${this.state.email}&company=${
           this.state.company
-        }&suburb=${this.state.suburb}&mp=${this.state.mp}&message=${value}&to=${this.state.to}`
+        }&suburb=${this.state.suburb}&mp=${this.state.mp}&message=${finalvalue}&to=${this.state.to}`
       );
       xhr.setRequestHeader('Content-Type', 'application/json');
 
