@@ -5,7 +5,11 @@ import mackaylogo from '../assets/mclogo.svg';
 import cclogo from '../assets/cclogo.png';
 
 import mackayplaceholder1 from '../assets/mackayvideo.jpg';
-import placeholderplaceholder from '../assets/video_placeholder.jpg';
+import placeholderplaceholder from '../assets/video-ph.jpg';
+import cairnsplaceholder1 from '../assets/cairnsvideo.jpg';
+import gcplaceholder1 from '../assets/goldcoastvideo.jpg';
+import redcliffeplaceholder1 from '../assets/redcliffevideo.jpg';
+import twplaceholder1 from '../assets/twvideo.jpg';
 
 const content = {
   Queensland: {
@@ -17,15 +21,18 @@ const content = {
     videos: [
       {
         src: 'https://www.youtube.com/embed/ScMzIvxBSi4',
-        placeholder: placeholderplaceholder
+        placeholder: placeholderplaceholder,
+        text: ''
       },
       {
         src: 'https://www.youtube.com/embed/ScMzIvxBSi4',
-        placeholder: placeholderplaceholder
+        placeholder: placeholderplaceholder,
+        text: ''
       },
       {
         src: 'https://www.youtube.com/embed/ScMzIvxBSi4',
-        placeholder: placeholderplaceholder
+        placeholder: placeholderplaceholder,
+        text: ''
       }
     ]
   },
@@ -38,8 +45,9 @@ const content = {
     auth: 'Authorised by M.Hall, Robina, QLD.',
     videos: [
       {
-        src: 'https://www.youtube.com/embed/ScMzIvxBSi4',
-        placeholder: placeholderplaceholder
+        src: 'https://www.youtube.com/embed/s16EK-EPh7k',
+        placeholder: gcplaceholder1,
+        text: 'Small Business is a Big Deal on the Gold Coast'
       }
     ]
   },
@@ -53,7 +61,28 @@ const content = {
     videos: [
       {
         src: 'https://www.youtube.com/embed/XvrPgID1GyY',
-        placeholder: mackayplaceholder1
+        placeholder: mackayplaceholder1,
+        text: 'Small Business is a Big Deal in Mackay'
+      },
+      {
+        src: 'https://www.youtube.com/embed/oB6x1o4dIXA',
+        placeholder: placeholderplaceholder,
+        text: 'Gary from Mackay - Small Business is a Big Deal'
+      },
+      {
+        src: 'https://www.youtube.com/embed/83GejUgozaE',
+        placeholder: placeholderplaceholder,
+        text: 'Michelle from Mackay - Small Business is a Big Deal'
+      },
+      {
+        src: 'https://www.youtube.com/embed/YGJC1JmfZuk',
+        placeholder: placeholderplaceholder,
+        text: 'Sarah from Mackay - Small Business is a Big Deal'
+      },
+      {
+        src: 'https://www.youtube.com/embed/iZZDVXRRtzo',
+        placeholder: placeholderplaceholder,
+        text: 'Scott from Mackay - Small Business is a Big Deal'
       }
     ]
   },
@@ -66,8 +95,9 @@ const content = {
     auth: 'Authorised by B.Flynn, Redcliffe, QLD.',
     videos: [
       {
-        src: 'https://www.youtube.com/embed/ScMzIvxBSi4',
-        placeholder: placeholderplaceholder
+        src: 'https://www.youtube.com/embed/-GTfT6C5av0',
+        placeholder: redcliffeplaceholder1,
+        text: 'Small Business is a Big Deal in Redcliffe'
       }
     ]
   },
@@ -80,8 +110,9 @@ const content = {
     auth: 'Authorised by J.Sheppard, Toowoomba, QLD.',
     videos: [
       {
-        src: 'https://www.youtube.com/embed/ScMzIvxBSi4',
-        placeholder: placeholderplaceholder
+        src: 'https://www.youtube.com/embed/TZKa-TfQ3yY',
+        placeholder: twplaceholder1,
+        text: 'Small Business is a Big Deal in Toowoomba'
       }
     ]
   },
@@ -94,8 +125,9 @@ const content = {
     auth: 'Authorised by D. Bender, Cairns Chamber of Commerce, The Pier, Cairns Qld 4870.',
     videos: [
       {
-        src: 'https://www.youtube.com/embed/ScMzIvxBSi4',
-        placeholder: placeholderplaceholder
+        src: 'https://www.youtube.com/embed/bjE7NKbqUgw',
+        placeholder: cairnsplaceholder1,
+        text: 'Small Business is a Big Deal in Cairns'
       }
     ]
   }
