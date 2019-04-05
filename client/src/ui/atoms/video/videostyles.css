@@ -1,3 +1,7 @@
 .vp-controls-wrapper {
     display: none !important;
 }
+
+.swiper-container {
+    z-index: 0 !important;
+}

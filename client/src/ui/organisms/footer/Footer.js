@@ -32,6 +32,7 @@ const FooterColumn = styled(Column)`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 2rem;
 `;
 
 const FooterRow = styled(Row)`

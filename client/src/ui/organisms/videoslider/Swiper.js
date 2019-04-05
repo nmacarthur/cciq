@@ -19,6 +19,10 @@ const Controls = styled.div`
   pointer-events: none;
 `;
 
+const StyledText = styled.h3`
+  text-align: center;
+`;
+
 export class SwiperSlider extends React.Component {
   constructor(props) {
     super(props);
@@ -55,6 +59,7 @@ export class SwiperSlider extends React.Component {
           {this.props.videos.map(vid => (
             <div key={nanoid()} className="swiper-slide">
               <Video src={vid.src} placeholder={vid.placeholder} />
+              <StyledText>{vid.text}</StyledText>
             </div>
           ))}
         </div>
