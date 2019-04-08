@@ -5,6 +5,7 @@ import mackaylogo from '../assets/mclogo.svg';
 import cclogo from '../assets/cclogo.png';
 
 import mackayplaceholder1 from '../assets/mackayvideo.jpg';
+import mackayplaceholder2 from '../assets/mackayvideo2.jpg';
 import placeholderplaceholder from '../assets/video-ph.jpg';
 import cairnsplaceholder1 from '../assets/cairnsvideo.jpg';
 import gcplaceholder1 from '../assets/goldcoastvideo.jpg';
@@ -65,6 +66,11 @@ const content = {
         text: 'Small Business is a Big Deal in Mackay'
       },
       {
+        src: 'https://www.youtube.com/embed/gKIRuSlrVWw',
+        placeholder: mackayplaceholder2,
+        text: 'RedHotBlue in Mackay - Small Business is a Big Deal'
+      },
+      {
         src: 'https://www.youtube.com/embed/oB6x1o4dIXA',
         placeholder: placeholderplaceholder,
         text: 'Gary from Mackay - Small Business is a Big Deal'
@@ -110,7 +116,7 @@ const content = {
     auth: 'Authorised by J.Sheppard, Toowoomba, QLD.',
     videos: [
       {
-        src: 'https://www.youtube.com/embed/AAdpC36YUF0',
+        src: 'https://www.youtube.com/embed/3kwm46pnUxE',
         placeholder: twplaceholder1,
         text: 'Small Business is a Big Deal in Toowoomba'
       }
