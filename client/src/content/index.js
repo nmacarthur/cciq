@@ -14,8 +14,8 @@ import twplaceholder1 from '../assets/twvideo.jpg';
 const content = {
   Queensland: {
     mp: 'Our Nation’s leaders',
-    //email: 'scott.morrison.mp@aph.gov.au',
-    email: 'nicholas@newwordorder.com.au',
+    email: 'scott.morrison.mp@aph.gov.au',
+    //email: 'nicholas@newwordorder.com.au',
     fb: 'https://www.facebook.com/CCIQLD/',
     auth: 'Authorised by C.Fruk, 375 Wickham Terrace, Brisbane QLD.',
     videos: [
@@ -38,8 +38,8 @@ const content = {
   },
   GoldCoast: {
     mp: 'Steve Ciobo MP',
-    //email: 'steven.viobo.mp@aph.gov.au',
-    email: 'nicholas@newwordorder.com.au',
+    email: 'steven.viobo.mp@aph.gov.au',
+    //email: 'nicholas@newwordorder.com.au',
     fb: 'https://www.facebook.com/GoldCoastCentral/',
     logo: gclogo,
     auth: 'Authorised by M.Hall, Robina, QLD.',
@@ -53,14 +53,14 @@ const content = {
   },
   Mackay: {
     mp: 'George Christensen MP',
-    //email: 'George.christensen.mp@aph.gov.au',
-    email: 'elliot@newwordorder.com.au',
+    email: 'George.christensen.mp@aph.gov.au',
+    //email: 'elliot@newwordorder.com.au',
     fb: 'https://www.facebook.com/mackayregionchamberofcommerce/',
     logo: mackaylogo,
     auth: 'Authorised by V.Gracie, Mackay, QLD.',
     videos: [
       {
-        src: 'https://www.youtube.com/embed/XvrPgID1GyY',
+        src: 'https://www.youtube.com/embed/bJeMESlENis',
         placeholder: mackayplaceholder1,
         text: 'Small Business is a Big Deal in Mackay'
       },
@@ -88,8 +88,8 @@ const content = {
   },
   Redcliffe: {
     mp: 'Luke Howarth MP',
-    //email: 'luke.howarth.mp@aph.gov.au',
-    email: 'nicholas@newwordorder.com.au',
+    email: 'luke.howarth.mp@aph.gov.au',
+    //email: 'nicholas@newwordorder.com.au',
     fb: 'https://www.facebook.com/RedcliffeCityChamberofCommerce/',
     logo: redcliffelogo,
     auth: 'Authorised by B.Flynn, Redcliffe, QLD.',
@@ -103,14 +103,14 @@ const content = {
   },
   Toowoomba: {
     mp: 'John McVeigh MP',
-    //email: 'john.mcveigh.mp@aph.gov.au',
-    email: 'nicholas@newwordorder.com.au',
+    email: 'john.mcveigh.mp@aph.gov.au',
+    //email: 'nicholas@newwordorder.com.au',
     fb: 'https://www.facebook.com/ToowoombaChamber/',
     logo: toowoombalogo,
     auth: 'Authorised by J.Sheppard, Toowoomba, QLD.',
     videos: [
       {
-        src: 'https://www.youtube.com/embed/TZKa-TfQ3yY',
+        src: 'https://www.youtube.com/embed/AAdpC36YUF0',
         placeholder: twplaceholder1,
         text: 'Small Business is a Big Deal in Toowoomba'
       }
@@ -118,8 +118,8 @@ const content = {
   },
   Cairns: {
     mp: 'Warren Entsch MP',
-    //email: 'warren.entsch@aph.gov.au',
-    email: 'nicholas@newwordorder.com.au',
+    email: 'warren.entsch@aph.gov.au',
+    //email: 'nicholas@newwordorder.com.au',
     fb: 'https://www.facebook.com/CairnsChamber',
     logo: cclogo,
     auth: 'Authorised by D. Bender, Cairns Chamber of Commerce, The Pier, Cairns Qld 4870.',
