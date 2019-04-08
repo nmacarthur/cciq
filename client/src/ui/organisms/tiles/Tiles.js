@@ -129,7 +129,7 @@ class Tiles extends Component {
                   {this.cardMessage}
                 </Heading>
                 <Text textAlign="center">
-                  We’ ve made it easy and drafted the email for you already!
+                  We’ve made it easy and drafted the email for you already!
                 </Text>
                 <Modal
                   modalChild={
