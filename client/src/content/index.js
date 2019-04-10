@@ -4,6 +4,7 @@ import toowoombalogo from '../assets/tclogo.svg';
 import mackaylogo from '../assets/mclogo.svg';
 import cclogo from '../assets/cclogo.png';
 
+import cciqplaceholder1 from '../assets/cciqvideo.jpg';
 import mackayplaceholder1 from '../assets/mackayvideo.jpg';
 import mackayplaceholder2 from '../assets/mackayvideo2.jpg';
 import placeholderplaceholder from '../assets/video-ph.jpg';
@@ -21,18 +22,18 @@ const content = {
     auth: 'Authorised by C.Fruk, 375 Wickham Terrace, Brisbane QLD.',
     videos: [
       {
-        src: 'https://www.youtube.com/embed/ScMzIvxBSi4',
-        placeholder: placeholderplaceholder,
+        src: 'https://www.youtube.com/embed/-3EexYzxDMs',
+        placeholder: cciqplaceholder1,
         text: ''
       },
       {
-        src: 'https://www.youtube.com/embed/ScMzIvxBSi4',
-        placeholder: placeholderplaceholder,
+        src: 'https://www.youtube.com/embed/-3EexYzxDMs',
+        placeholder: cciqplaceholder1,
         text: ''
       },
       {
-        src: 'https://www.youtube.com/embed/ScMzIvxBSi4',
-        placeholder: placeholderplaceholder,
+        src: 'https://www.youtube.com/embed/-3EexYzxDMs',
+        placeholder: cciqplaceholder1,
         text: ''
       }
     ]
