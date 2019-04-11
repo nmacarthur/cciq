@@ -81,8 +81,12 @@ const Slide = styled.li`
 `;
 
 const SlideImg = styled.img`
-  min-width: 100%;
-  max-width: 100%;
+  width: 22rem;
+  height: 22rem;
+  @media screen and (max-width: 425px) {
+    width: 16rem;
+    height: 16rem;
+  }
 `;
 const images = [];
 
@@ -110,6 +114,11 @@ class ImageRoller extends Component {
   }
 
   render() {
+    const displayImages = this.state.images;
+    const imageset1 = displayImages.sort(() => {
+      return 0.5 - Math.random();
+    });
+
     return (
       <Section backgroundColor={this.backgroundColor} space={4}>
         <Slider>
