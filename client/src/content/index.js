@@ -12,6 +12,11 @@ import cairnsplaceholder1 from '../assets/cairnsvideo.jpg';
 import gcplaceholder1 from '../assets/goldcoastvideo.jpg';
 import redcliffeplaceholder1 from '../assets/redcliffevideo.jpg';
 import twplaceholder1 from '../assets/twvideo.jpg';
+import placeholderGary from '../assets/placeholder-gary.jpg';
+import placeholderMichelle from '../assets/placeholder-michelle.jpg';
+import placeholderSarah from '../assets/placeholder-sarah.jpg';
+import placeholderScott from '../assets/placeholder-scott.jpg';
+
 
 const content = {
   Queensland: {
@@ -73,22 +78,22 @@ const content = {
       },
       {
         src: 'https://www.youtube.com/embed/oB6x1o4dIXA',
-        placeholder: placeholderplaceholder,
+        placeholder: placeholderGary,
         text: 'Gary from Mackay - Small Business is a Big Deal'
       },
       {
         src: 'https://www.youtube.com/embed/83GejUgozaE',
-        placeholder: placeholderplaceholder,
+        placeholder: placeholderMichelle,
         text: 'Michelle from Mackay - Small Business is a Big Deal'
       },
       {
         src: 'https://www.youtube.com/embed/YGJC1JmfZuk',
-        placeholder: placeholderplaceholder,
+        placeholder: placeholderSarah,
         text: 'Sarah from Mackay - Small Business is a Big Deal'
       },
       {
         src: 'https://www.youtube.com/embed/iZZDVXRRtzo',
-        placeholder: placeholderplaceholder,
+        placeholder: placeholderScott,
         text: 'Scott from Mackay - Small Business is a Big Deal'
       }
     ]
