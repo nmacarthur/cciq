@@ -84,10 +84,43 @@ const newSupporterPack = ({
     ]
   };
 
+  emailData2 = {
+    Messages: [
+      {
+        From: {
+          Email: "cciqadvocacy@cciq.com.au",
+          Name: "Support Small Business Team"
+        },
+        To: [
+          {
+            Email: email,
+            Name: name
+          }
+        ],
+        Subject: "Thanks for ordering our promo pack!",
+        HTMLPart: `<p>Dear Supporter,</p>
+        <p>Welcome to the Small Business is a Big Deal campaign and thank you for ordering our promo pack!</p>
+        <p>Small business makes up 98% of all businesses in Australia, and together we employ more Australians than government or large businesses. </p>
+        <p>In fact, small businesses help put food on the table for nearly 5 million people, and give hundreds of thousands of young Australians their first job.</p> 
+        <p>Small Business is a Big Deal aims to unite employers and employees, not drive them apart. We’re calling on all political parties to fix the three most urgent problems which small businesses say they face:</p>
+        <ol>
+          <li>Help employers and employees work better together</li>
+          <li>Deliver affordable, reliable energy with lower emissions </li>
+          <li>Stop the collapse in skills </li>
+        </ol>
+        <p>Your promo pack is on its way - now is the time to get active so we have a chance to win this fight!</p>
+        <p>We will send you an email or two over the course of the campaign, but the best way to see all the action is on Facebook (https://www.facebook.com/CCIQLD/)</p>
+        <p>Thank you,</p>
+        <p>The Small Business is a Big Deal Team</p>`
+      }
+    ]
+  };
+
   sendEmail
     .request(emailData)
     .then(response => {
       /* do nothing */
+      sendEmail.request(emailData2);
     })
     .catch(error => {
       /* do nothing */
