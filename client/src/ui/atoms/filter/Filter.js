@@ -60,10 +60,13 @@ class Filter extends Component {
 
   updateImg() {
     setTimeout(() => {
-      const limit = this.props.width - 80;
+      console.log(this.props.width);
+      const height = (this.props.width / 100) * 16.87;
+      const limit = this.props.width - height;
+      console.log(height);
       this.ctx.drawImage(this.frame, 0, 0, this.props.width, this.props.width);
       this.ctx.drawImage(this.img, 4, 4, this.props.width - 8, this.props.width - 8);
-      this.ctx.drawImage(this.banner, 0, limit, this.props.width, 80);
+      this.ctx.drawImage(this.banner, 0, limit, this.props.width, height);
       const framedImage = new Promise((resolve, reject) => {
         const base64Image = this.canvas.toDataURL('image/jpeg');
         resolve(base64Image);
@@ -85,6 +88,7 @@ class Filter extends Component {
       <div>
         <Dropzone
           onDrop={acceptedFiles => {
+            console.log(acceptedFiles);
             const reader = new FileReader();
 
             reader.onabort = () => console.log('file reading was aborted');
