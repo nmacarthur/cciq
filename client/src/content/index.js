@@ -16,6 +16,7 @@ import placeholderGary from '../assets/placeholder-gary.jpg';
 import placeholderMichelle from '../assets/placeholder-michelle.jpg';
 import placeholderSarah from '../assets/placeholder-sarah.jpg';
 import placeholderScott from '../assets/placeholder-scott.jpg';
+import placeholderJoy from '../assets/placeholder-joy.jpg';
 
 
 const content = {
@@ -125,6 +126,11 @@ const content = {
         src: 'https://www.youtube.com/embed/3kwm46pnUxE',
         placeholder: twplaceholder1,
         text: 'Small Business is a Big Deal in Toowoomba'
+      },
+      {
+        src: 'https://www.youtube.com/embed/64lUMGPeuC8',
+        placeholder: placeholderJoy,
+        text: 'Joy from Toowoomba - Small Business is a Big Deal'
       }
     ]
   },
