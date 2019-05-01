@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Queensland, GoldCoast, Mackay, Redcliffe, Toowoomba, Cairns } from './ui/pages';
+import {
+  Queensland,
+  GoldCoast,
+  Mackay,
+  Redcliffe,
+  Toowoomba,
+  Cairns,
+  Townsville
+} from './ui/pages';
 
 class App extends Component {
   render() {
@@ -20,6 +28,7 @@ class App extends Component {
           <Route path="/redcliffe/" component={Redcliffe} />
           <Route path="/toowoomba/" component={Toowoomba} />
           <Route path="/cairns/" component={Cairns} />
+          <Route path="/townsville/" component={Townsville} />
         </div>
       </Router>
     );
