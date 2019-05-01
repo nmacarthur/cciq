@@ -12,7 +12,15 @@ const sendEmail = mailjet.post("send", {
   version: "v3.1"
 });
 
-const newEmailFromData = ({ name, email, mp, suburb, message, to }) => {
+const newEmailFromData = ({
+  name,
+  email,
+  mp,
+  suburb,
+  message,
+  to,
+  location
+}) => {
   const regex = new RegExp("/[\r\n]+/");
   const newMessage = message.split("\\n").map(string => `<p>${string}</p>`);
   const finalMessage = message;
@@ -26,6 +34,7 @@ const newEmailFromData = ({ name, email, mp, suburb, message, to }) => {
         To: [
           {
             Email: to,
+            //Email: "nicholas@newwordorder.com.au",
             Name: mp
           }
         ],
@@ -37,11 +46,38 @@ const newEmailFromData = ({ name, email, mp, suburb, message, to }) => {
       }
     ]
   };
+  const messageToCCIQ = `
+  name: ${name},
+  email: ${email},
+  suburb: ${suburb},
+  site: ${location}
+  `;
+
+  const emailData2 = {
+    Messages: [
+      {
+        From: {
+          Email: "cciqadvocacy@cciq.com.au",
+          Name: name
+        },
+        To: [
+          {
+            Email: "tbirkbeck@cciq.com.au",
+            //Email: "nicholas@newwordorder.com.au",
+            Name: name
+          }
+        ],
+        Subject: "New MP Lobby ",
+        TextPart: messageToCCIQ
+      }
+    ]
+  };
 
   sendEmail
     .request(emailData)
     .then(response => {
       /* do nothing */
+      sendEmail.request(emailData2);
     })
     .catch(error => {
       /* do nothing */
@@ -75,6 +111,7 @@ const newSupporterPack = ({
         To: [
           {
             Email: "tbirkbeck@cciq.com.au",
+            //Email: "nicholas@newwordorder.com.au",
             Name: name
           }
         ],
@@ -127,7 +164,46 @@ const newSupporterPack = ({
     });
 };
 
+const newPhotoCapture = ({ name, email, company, location }) => {
+  const message = `
+    name: ${name},
+    email: ${email},
+    company: ${company},
+    location: ${location}
+    `;
+
+  const emailData = {
+    Messages: [
+      {
+        From: {
+          Email: "cciqadvocacy@cciq.com.au",
+          Name: name
+        },
+        To: [
+          {
+            Email: "tbirkbeck@cciq.com.au",
+            //Email: "nicholas@newwordorder.com.au",
+            Name: name
+          }
+        ],
+        Subject: "New Photo Filter Completed",
+        TextPart: message
+      }
+    ]
+  };
+
+  sendEmail
+    .request(emailData)
+    .then(response => {
+      /* do nothing */
+    })
+    .catch(error => {
+      /* do nothing */
+    });
+};
+
 module.exports = {
   newEmailFromData,
-  newSupporterPack
+  newSupporterPack,
+  newPhotoCapture
 };
