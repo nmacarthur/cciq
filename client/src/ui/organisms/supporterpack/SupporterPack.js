@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import firebase from 'firebase';
 
 import Section from '../../atoms/section';
 import Container from '../../atoms/container';
@@ -15,6 +16,21 @@ const SubmitButton = styled(Button)`
   width: 100%;
 `;
 
+const config = {
+  apiKey: 'AIzaSyADQDo_zMbgj0o58tr9BsToHtSZqrzOzKI',
+  authDomain: 'cciq-smallbusiness.firebaseapp.com',
+  databaseURL: 'https://cciq-smallbusiness.firebaseio.com',
+  projectId: 'cciq-smallbusiness',
+  storageBucket: 'cciq-smallbusiness.appspot.com',
+  messagingSenderId: '704392240973'
+};
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(config);
+}
+
+const db = firebase.firestore();
+
 class SupporterPack extends Component {
   constructor(props) {
     super(props);
@@ -29,6 +45,7 @@ class SupporterPack extends Component {
       postcode: null,
       buttonMessage: 'Send'
     };
+    this.location = props.location;
     this.mail = this.mail.bind(this);
     this.isfilled = this.isfilled.bind(this);
   }
@@ -88,6 +105,40 @@ class SupporterPack extends Component {
 
       xhr.send(data);
       const invoke = this.props.updateOpenState;
+
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, '0');
+      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+      var yyyy = today.getFullYear();
+
+      today = mm + '' + dd + '' + yyyy;
+      const id = `${today}--${this.state.name}`;
+      const db_name = this.state.name ? this.state.name : '';
+      const db_email = this.state.email ? this.state.email : '';
+      const db_company = this.state.company ? this.state.company : '';
+      const db_suburb = this.state.suburb ? this.state.suburb : '';
+      const db_address = this.state.address ? this.state.address : '';
+      const db_postcode = this.state.postcode ? this.state.postcode : '';
+      const db_phone = this.state.phone ? this.state.phone : '';
+
+      db.collection('supporterpacks')
+        .doc(id)
+        .set({
+          name: db_name,
+          email: db_email,
+          address: db_address,
+          postcode: db_postcode,
+          phone: db_phone,
+          location: this.location,
+          id: id
+        })
+        .then(() => {
+          console.log('done');
+        })
+        .catch(error => {
+          console.error('Error adding document: ', error);
+        });
+
       invoke();
     } else {
       this.setState({ buttonMessage: 'Please fill out all required fields' });

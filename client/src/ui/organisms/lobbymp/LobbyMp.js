@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import firebase from 'firebase';
 
 import { Heading, Text } from 'rebass';
 
@@ -11,6 +12,21 @@ import Input from '../../atoms/input';
 import Button from '../../atoms/button';
 import TextInput from '../../atoms/textinput';
 
+const config = {
+  apiKey: 'AIzaSyADQDo_zMbgj0o58tr9BsToHtSZqrzOzKI',
+  authDomain: 'cciq-smallbusiness.firebaseapp.com',
+  databaseURL: 'https://cciq-smallbusiness.firebaseio.com',
+  projectId: 'cciq-smallbusiness',
+  storageBucket: 'cciq-smallbusiness.appspot.com',
+  messagingSenderId: '704392240973'
+};
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(config);
+}
+
+const db = firebase.firestore();
+
 const SubmitButton = styled(Button)`
   background-color: #f0dd00;
   width: 100%;
@@ -20,7 +36,7 @@ class LobbyMp extends Component {
   constructor(props) {
     super(props);
     this.queensland = props.queensland;
-
+    this.location = props.location;
     this.titleMessage = this.queensland
       ? `Lobby the PM and Opposition Leader`
       : `Lobby your local MP: ${this.props.mp}`;
@@ -75,12 +91,39 @@ class LobbyMp extends Component {
         'POST',
         `/mail?name=${this.state.name}&email=${this.state.email}&company=${
           this.state.company
-        }&suburb=${this.state.suburb}&mp=${this.state.mp}&message=${finalvalue}&to=${this.state.to}`
+        }&suburb=${this.state.suburb}&mp=${this.state.mp}&message=${finalvalue}&to=${
+          this.state.to
+        }&location=${this.location}`
       );
       xhr.setRequestHeader('Content-Type', 'application/json');
 
       xhr.send(data);
       const invoke = this.props.updateOpenState;
+
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, '0');
+      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+      var yyyy = today.getFullYear();
+
+      today = mm + '' + dd + '' + yyyy;
+      const id = `${today}--${this.state.name}`;
+      db.collection('MPemails')
+        .doc(id)
+        .set({
+          name: this.state.name,
+          email: this.state.email,
+          company: this.state.company,
+          suburb: this.state.suburb,
+          mp: this.state.mp,
+          location: this.location,
+          id: id
+        })
+        .then(() => {
+          console.log('done');
+        })
+        .catch(error => {
+          console.error('Error adding document: ', error);
+        });
       invoke();
     } else {
       this.setState({ buttonMessage: 'Please fill out all fields' });
