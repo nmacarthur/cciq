@@ -28,7 +28,9 @@ const config = {
   messagingSenderId: '704392240973'
 };
 
-firebase.initializeApp(config);
+if (!firebase.apps.length) {
+  firebase.initializeApp(config);
+}
 const db = firebase.firestore();
 
 class PhotoFilter extends Component {
@@ -43,7 +45,7 @@ class PhotoFilter extends Component {
       file: '',
       buttonText: 'Download'
     };
-
+    this.location = props.location;
     this.updateState = this.updateState.bind(this);
     this.doTheThing = this.doTheThing.bind(this);
   }
@@ -86,14 +88,24 @@ class PhotoFilter extends Component {
 
   doTheThing() {
     if (this.isfilled()) {
-      const name = `${nanoid()}.jpg`;
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, '0');
+      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+      var yyyy = today.getFullYear();
+
+      today = mm + '' + dd + '' + yyyy;
+      const name = `${today}_${this.state.name}.jpg`;
       const { file } = this.state;
       const invoke = this.props.updateOpenState;
 
       // download(this.state.file, 'download.jpg', 'image/jpeg');
+      const recordname = `${today}--${this.state.name}`;
       db.collection('images')
-        .add({
+        .doc(recordname)
+        .set({
           name,
+          email: this.state.email,
+          company: this.state.company,
           data: file
         })
         .then(() => {
@@ -103,6 +115,27 @@ class PhotoFilter extends Component {
         .catch(error => {
           console.error('Error adding document: ', error);
         });
+
+      var data = JSON.stringify(false);
+
+      var xhr = new XMLHttpRequest();
+      xhr.withCredentials = true;
+
+      xhr.addEventListener('readystatechange', function() {
+        if (this.readyState === 4) {
+          console.log(this.responseText);
+        }
+      });
+
+      xhr.open(
+        'POST',
+        `/filter?name=${this.state.name}&email=${this.state.email}&company=${
+          this.state.company
+        }&location=${this.location}`
+      );
+      xhr.setRequestHeader('Content-Type', 'application/json');
+
+      xhr.send(data);
     } else {
       this.setState({ buttonText: 'Please fill out all required fields' });
     }

@@ -70,6 +70,7 @@ class Tiles extends Component {
                         modal1: !this.state.modal1
                       });
                     }}
+                    location={this.location}
                   />
                 }
                 isVisible={this.state.modal1}
@@ -104,6 +105,7 @@ class Tiles extends Component {
                         modal2: !this.state.modal2
                       });
                     }}
+                    location={this.location}
                   />
                 }
                 isVisible={this.state.modal2}
@@ -142,6 +144,7 @@ class Tiles extends Component {
                       mp={this.content.mp}
                       to={this.content.email}
                       queensland={this.queensland}
+                      location={this.location}
                     />
                   }
                   isVisible={this.state.modal3}

@@ -23,6 +23,11 @@ app.post("/supporter", (req, res) => {
   res.sendStatus(200);
 });
 
+app.post("/filter", (req, res) => {
+  email.newPhotoCapture(req.query);
+  res.sendStatus(200);
+});
+
 const port = process.env.PORT || 5000;
 app.listen(port);
 
