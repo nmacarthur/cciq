@@ -18,7 +18,6 @@ import placeholderSarah from '../assets/placeholder-sarah.jpg';
 import placeholderScott from '../assets/placeholder-scott.jpg';
 import placeholderJoy from '../assets/placeholder-joy.jpg';
 
-
 const content = {
   Queensland: {
     mp: 'Our Nation’s leaders',
@@ -146,6 +145,30 @@ const content = {
         src: 'https://www.youtube.com/embed/bjE7NKbqUgw',
         placeholder: cairnsplaceholder1,
         text: 'Small Business is a Big Deal in Cairns'
+      }
+    ]
+  },
+  Townsville: {
+    mp: 'Cathy O’Toole MP',
+    email: 'Cathy.OToole.MP@aph.gov.au',
+    //email: 'nicholas@newwordorder.com.au',
+    fb: 'https://www.facebook.com/CCIQLD/',
+    auth: 'Authorised by C.Fruk, 375 Wickham Terrace, Brisbane QLD.',
+    videos: [
+      {
+        src: 'https://www.youtube.com/embed/-3EexYzxDMs',
+        placeholder: cciqplaceholder1,
+        text: ''
+      },
+      {
+        src: 'https://www.youtube.com/embed/-3EexYzxDMs',
+        placeholder: cciqplaceholder1,
+        text: ''
+      },
+      {
+        src: 'https://www.youtube.com/embed/-3EexYzxDMs',
+        placeholder: cciqplaceholder1,
+        text: ''
       }
     ]
   }
