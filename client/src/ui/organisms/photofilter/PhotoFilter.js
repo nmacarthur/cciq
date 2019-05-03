@@ -103,7 +103,7 @@ class PhotoFilter extends Component {
       db.collection('images')
         .doc(recordname)
         .set({
-          name,
+          name: this.state.name,
           email: this.state.email,
           company: this.state.company,
           data: file
