@@ -33,12 +33,12 @@ class Scorecard extends Component {
         <Section backgroundColor={this.props.backgroundColor} space={4}>
           <Container>
             <Row alignItems="center" justifyContent="center">
-              <Column sm={12} md={12}>
-                <Heading textAlign="center" fontSize="3rem" lineHeight="3.875rem" mb={2}>
+              <Column sm={12} md={10}>
+                <Heading textAlign="center" fontSize="2.75rem" lineHeight="3.875rem" mb={2}>
                   Who should small business vote for? <br />
                   Policy guide to the 2019 Australian election.
                 </Heading>
-                <Text textAlign="center" fontSize="1.5rem">
+                <Text textAlign="center" fontSize="1.5rem" mb={4}>
                   We compare policies of the major political parties on the three Small Business is
                   a BIG Deal priorities.
                 </Text>
