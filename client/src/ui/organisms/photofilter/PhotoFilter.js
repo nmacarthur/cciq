@@ -20,7 +20,7 @@ const SubmitButton = styled(Button)`
 `;
 
 const config = {
-  apiKey: 'AIzaSyADQDo_zMbgj0o58tr9BsToHtSZqrzOzKI',
+  apiKey: 'AIzaSyAg5hq5NV_8ofdHK9BC84u2WHftUV1YPYw',
   authDomain: 'cciq-smallbusiness.firebaseapp.com',
   databaseURL: 'https://cciq-smallbusiness.firebaseio.com',
   projectId: 'cciq-smallbusiness',

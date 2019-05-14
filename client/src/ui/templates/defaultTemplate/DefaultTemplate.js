@@ -7,6 +7,7 @@ import Text2 from '../../organisms/text2';
 import ImageRoller from '../../organisms/imageroller';
 import CTA from '../../organisms/cta';
 import Footer from '../../organisms/footer';
+import Scorecard from '../../organisms/scorecard';
 
 import theme from '../../theme';
 
@@ -29,9 +30,11 @@ class DefaultTemplate extends Component {
             location={this.location}
             queensland={true}
             content={this.content}
+            db={this.props.db}
           />
           <Text2 backgroundColor={theme.primary} location={this.location} />
           <ImageRoller backgroundColor={theme.primary} location={this.location} />
+          <Scorecard backgroundColor={theme.primary} location={this.location} />
           <CTA backgroundColor={theme.primary} location={this.location} content={this.content} />
           <Footer backgroundColor={theme.dark} location={this.location} content={this.content} />
         </div>
@@ -45,6 +48,7 @@ class DefaultTemplate extends Component {
           <Tiles backgroundColor={theme.primary} location={this.location} content={this.content} />
           <Text2 backgroundColor={theme.primary} location={this.location} />
           <ImageRoller backgroundColor={theme.primary} location={this.location} />
+          <Scorecard backgroundColor={theme.primary} location={this.location} />
           <CTA backgroundColor={theme.primary} location={this.location} content={this.content} />
           <Footer backgroundColor={theme.dark} location={this.location} content={this.content} />
         </div>
