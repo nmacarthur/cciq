@@ -98,7 +98,9 @@ class ImageRoller extends Component {
     this.state = {
       images: []
     };
-    db.collection('images')
+    const queryImages = db.collection('images');
+    var query = queryImages.limit(20);
+    query
       .get()
       .then(querySnapshot => {
         querySnapshot.forEach(doc => {
