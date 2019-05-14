@@ -13,14 +13,16 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
-    "dotenv": "^7.0.0",
+    "dotenv": "^8.0.0",
     "express": "^4.16.4",
     "fetch": "^1.1.0",
     "firebase": "^5.11.0",
     "multer": "^1.4.1",
     "nanoid": "^2.0.1",
     "node-mailjet": "^3.3.1",
+    "react-accessible-accordion": "^3.0.0",
     "react-dropzone": "^10.0.4",
+    "react-light-accordion": "^0.1.4",
     "sightengine": "^1.3.1",
     "swiper": "^4.5.0",
     "urlsafe-base64": "^1.0.0"
