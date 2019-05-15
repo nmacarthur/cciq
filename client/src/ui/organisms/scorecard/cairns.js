@@ -4,10 +4,14 @@ import Section from '../../atoms/section';
 import Container from '../../atoms/container';
 import Row from '../../atoms/row';
 import Column from '../../atoms/column';
+import Button from '../../atoms/button';
 
 import lnpimg from '../../../assets/lnp.svg';
 import laborimg from '../../../assets/labor.svg';
 import greensimg from '../../../assets/greens.svg';
+
+import scomopdf from '../../../assets/SBIABD_response_PM_Scott_Morrison.pdf';
+import kappdf from '../../../assets/SBIABD_response_Daniel_McCarthy.pdf';
 
 import { Accordion, AccordionItem } from 'react-light-accordion';
 import './style.css';
@@ -59,6 +63,77 @@ class Scorecard extends Component {
                     <Content3 />
                   </AccordionItem>
                 </Accordion>
+              </Column>
+            </Row>
+          </Container>
+        </Section>
+        <Section backgroundColor={this.props.backgroundColor} space={2}>
+          <Container>
+            <Row alignItems="center" justifyContent="center">
+              <Column sm={12} md={10} textAlign="center">
+                <a href={scomopdf} target="_blank">
+                  <Button>PM Scott Morrison’s reply to SBIABD</Button>
+                </a>{' '}
+                &nbsp;&nbsp;
+                {''}
+                <a href={kappdf} target="_blank">
+                  <Button>KAP’s Daniel McCarthy’s reply to SBIABD</Button>
+                </a>
+              </Column>
+            </Row>
+          </Container>
+        </Section>
+        <Section backgroundColor={this.props.backgroundColor} space={2}>
+          <Container>
+            <Row alignItems="center" justifyContent="center">
+              <Column sm={12} md={10} textAlign="center">
+                <Heading>Learn more about your (Electorate) candidates</Heading>
+                <p>
+                  <a target="_blank" href="https://www.liberal.org.au/member/warren-entsch">
+                    Warren Entsch – LNP
+                  </a>
+                </p>
+                <p>
+                  <a
+                    target="_blank"
+                    href="https://www.alp.org.au/our-people/our-people/elida-faith/"
+                  >
+                    Elida Faith – ALP
+                  </a>
+                </p>
+                <p>
+                  <a target="_blank" href="https://www.conservativenationalparty.org/leichhardt">
+                    Jo Ashby - Fraser Anning’s Conservative National Party
+                  </a>
+                </p>
+                <p>
+                  <a target="_blank" href="https://www.facebook.com/ChadAndersonIndependent/">
+                    Chad Anderson – Independent
+                  </a>
+                </p>
+                <p>
+                  <a target="_blank" href="https://www.onenation.org.au/our-team/ross-macdonald/">
+                    Ross Macdonald – One Nation
+                  </a>
+                </p>
+                <p>
+                  <a target="_blank" href="http://www.danielmccarthy.com.au/">
+                    Daniel McCarthy – Katter’s Australian Party
+                  </a>
+                </p>
+                <p>
+                  <a
+                    target="_blank"
+                    href="https://www.unitedaustraliaparty.org.au/candidates/jen-sackley/"
+                  >
+                    Jen Sackley – United Australia Party
+                  </a>
+                </p>
+                <p>
+                  <a target="_blank" href="https://greens.org.au/qld/person/gary-oliver">
+                    Gary Oliver – The Greens
+                  </a>
+                </p>
               </Column>
             </Row>
           </Container>
@@ -309,6 +384,10 @@ const Content3 = () => (
             saving $2bn
           </li>
           <li>Review into performance funding for universities</li>
+          <li>
+            Special status for Far North Qld to bring in workers from overseas in jobs where a local
+            skills shortage exists
+          </li>
         </ul>
         <p>
           <b>Comments:</b>
@@ -318,6 +397,11 @@ const Content3 = () => (
           places over the past five years. Its election commitment does not go far enough to meet
           the shortfall. There is a common view among Queensland business owners that universities
           are not delivering value for money, so the review into this sector is welcome.
+        </p>
+        <p>
+          The business community welcomes the LNP’s recognition that some Far North businesses need
+          an option to sponsor skilled overseas workers in some job categories if the local job
+          market is insufficient.
         </p>
       </TabPanel>
       <TabPanel>
