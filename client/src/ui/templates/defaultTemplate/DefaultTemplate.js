@@ -48,7 +48,9 @@ class DefaultTemplate extends Component {
           <Tiles backgroundColor={theme.primary} location={this.location} content={this.content} />
           <Text2 backgroundColor={theme.primary} location={this.location} />
           <ImageRoller backgroundColor={theme.primary} location={this.location} />
-          <Scorecard backgroundColor={theme.primary} location={this.location} />
+          <div id="scorecard">
+            <Scorecard backgroundColor={theme.primary} location={this.location} />
+          </div>
           <CTA backgroundColor={theme.primary} location={this.location} content={this.content} />
           <Footer backgroundColor={theme.dark} location={this.location} content={this.content} />
         </div>
