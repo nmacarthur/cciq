@@ -21,6 +21,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+a {
+  color: #000;
+}
+
 :focus {
   outline: 0;
 }
