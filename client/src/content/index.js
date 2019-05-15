@@ -4,6 +4,8 @@ import toowoombalogo from '../assets/tclogo.svg';
 import mackaylogo from '../assets/mclogo.svg';
 import cclogo from '../assets/cclogo.png';
 
+import React from 'react';
+
 import cciqplaceholder1 from '../assets/cciqvideo.jpg';
 import mackayplaceholder1 from '../assets/mackayvideo.jpg';
 import mackayplaceholder2 from '../assets/mackayvideo2.jpg';
@@ -17,6 +19,9 @@ import placeholderMichelle from '../assets/placeholder-michelle.jpg';
 import placeholderSarah from '../assets/placeholder-sarah.jpg';
 import placeholderScott from '../assets/placeholder-scott.jpg';
 import placeholderJoy from '../assets/placeholder-joy.jpg';
+
+import Redcliffe from '../ui/organisms/scorecard/redcliffe';
+import Scorecard from '../ui/organisms/scorecard';
 
 const content = {
   Queensland: {
@@ -111,7 +116,8 @@ const content = {
         placeholder: redcliffeplaceholder1,
         text: 'Small Business is a Big Deal in Redcliffe'
       }
-    ]
+    ],
+    scorecard: <Redcliffe />
   },
   Toowoomba: {
     mp: 'John McVeigh MP',
