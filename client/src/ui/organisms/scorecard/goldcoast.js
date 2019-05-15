@@ -4,10 +4,13 @@ import Section from '../../atoms/section';
 import Container from '../../atoms/container';
 import Row from '../../atoms/row';
 import Column from '../../atoms/column';
+import Button from '../../atoms/button';
 
 import lnpimg from '../../../assets/lnp.svg';
 import laborimg from '../../../assets/labor.svg';
 import greensimg from '../../../assets/greens.svg';
+
+import scomopdf from '../../../assets/SBIABD_response_PM_Scott_Morrison.pdf';
 
 import { Accordion, AccordionItem } from 'react-light-accordion';
 import './style.css';
@@ -59,6 +62,67 @@ class Scorecard extends Component {
                     <Content3 />
                   </AccordionItem>
                 </Accordion>
+              </Column>
+            </Row>
+          </Container>
+        </Section>
+        <Section backgroundColor={this.props.backgroundColor} space={2}>
+          <Container>
+            <Row alignItems="center" justifyContent="center">
+              <Column sm={12} md={10} textAlign="center">
+                <a href={scomopdf} target="_blank">
+                  <Button>PM Scott Morrison’s reply to SBIABD</Button>
+                </a>
+              </Column>
+            </Row>
+          </Container>
+        </Section>
+        <Section backgroundColor={this.props.backgroundColor} space={2}>
+          <Container>
+            <Row alignItems="center" justifyContent="center">
+              <Column sm={12} md={10} textAlign="center">
+                <Heading>Learn more about your Moncrieff candidates</Heading>
+                <p>
+                  <a target="_blank" href="https://www.lnp.org.au/angie-bell/">
+                    Angie Bell - LNP
+                  </a>
+                </p>
+                <p>
+                  <a
+                    target="_blank"
+                    href="https://www.alp.org.au/our-people/our-people/tracey-bell/"
+                  >
+                    Tracey Bell – ALP
+                  </a>
+                </p>
+                <p>
+                  <a target="_blank" href="https://www.ldp.org.au/hor_candidates">
+                    Sly Gryphon – Liberal Democrats
+                  </a>
+                </p>
+                <p>
+                  <a target="_blank" href="https://www.conservativenationalparty.org/moncrieff">
+                    Darren Alan Ling – Fraser Anning’s Conservative National Party
+                  </a>
+                </p>
+                <p>
+                  <a
+                    target="_blank"
+                    href="https://www.unitedaustraliaparty.org.au/candidates/garry-eilola/"
+                  >
+                    Garry Paul Eilola – United Australia Party
+                  </a>
+                </p>
+                <p>
+                  <a target="_blank" href="https://greens.org.au/qld/person/sally-spain">
+                    Sally Spain – The Greens
+                  </a>
+                </p>
+                <p>
+                  <a target="_blank" href="https://www.onenation.org.au/our-team/vanessa-sibson/">
+                    Vanessa Sibson – One Nation
+                  </a>
+                </p>
               </Column>
             </Row>
           </Container>

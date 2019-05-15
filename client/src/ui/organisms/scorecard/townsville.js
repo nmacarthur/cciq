@@ -81,7 +81,7 @@ class Scorecard extends Component {
           <Container>
             <Row alignItems="center" justifyContent="center">
               <Column sm={12} md={10} textAlign="center">
-                <Heading>Learn more about your (Electorate) candidates</Heading>
+                <Heading>Learn more about your Herbert candidates</Heading>
                 <p>
                   <a target="_blank" href="https://www.onenation.org.au/our-team/amy-lohse/">
                     Amy Lohse – One Nation
